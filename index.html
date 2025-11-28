@@ -1,249 +1,59 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <title>SESL – Simple Expert System Language</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="SESL is a deterministic, rule-based expert system language that produces repeatable, explainable decisions." />
+const:
+  MIN_ADULT_AGE: 16
 
-  <!-- Tailwind CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          fontFamily: {
-            sans: ["Inter", "system-ui", "Arial"],
-          },
-          colors: {
-            brand: {
-              50: "#eef2ff",
-              100: "#e0e7ff",
-              200: "#c7d2fe",
-              300: "#a5b4fc",
-              400: "#818cf8",
-              500: "#6366f1",
-              600: "#4f46e5",
-              700: "#4338ca",
-              800: "#3730a3",
-              900: "#312e81",
-            },
-          },
-        },
-      },
-    };
-  </script>
-</head>
+rules:
 
-<body class="bg-slate-950 text-slate-100 antialiased">
-  <!-- Navigation -->
-  <header class="border-b border-slate-800 bg-slate-950/80 backdrop-blur sticky top-0 z-40">
-    <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
-      <a class="flex items-center gap-2" href="#">
-        <div class="h-8 w-8 bg-brand-500 rounded-xl flex items-center justify-center font-bold text-slate-900">S</div>
-        <span class="text-lg font-semibold">SESL</span>
-      </a>
-      <nav class="hidden md:flex gap-8 text-sm text-slate-300">
-        <a href="#what" class="hover:text-white">What is SESL</a>
-        <a href="#problem" class="hover:text-white">Why SESL</a>
-        <a href="#features" class="hover:text-white">Features</a>
-        <a href="#examples" class="hover:text-white">Examples</a>
-        <a href="#cli" class="hover:text-white">CLI</a>
-      </nav>
-    </div>
-  </header>
+  - rule: check_age
+    priority: 10
+    if:
+      - applicant.age < MIN_ADULT_AGE
+    then:
+      result.eligible: false
+    because: "Applicant is under the required adult age."
 
-  <main>
+  - rule: check_nationality
+    priority: 20
+    if:
+      - applicant.nationality != "British"
+    then:
+      result.eligible: false
+    because: "Applicant is not a British national."
 
-    <!-- HERO -->
-    <section class="pt-20 pb-24 px-4">
-      <div class="max-w-5xl mx-auto text-center">
-        <h1 class="text-4xl sm:text-5xl font-semibold mb-6">
-          Deterministic, explainable decision logic.<br/>
-          <span class="text-brand-300">No hallucinations. No guesswork.</span>
-        </h1>
+  - rule: check_previous_passport
+    priority: 30
+    if:
+      - applicant.has_previous_passport == true
+    then:
+      result.eligible: false
+    because: "Applicant has already had a UK passport."
 
-        <p class="text-lg text-slate-300 max-w-2xl mx-auto mb-8">
-          SESL (Simple Expert System Language) is a compact rule-based language that turns any structured text or
-          document into **rules and facts**.  
-          Ask SESL a question → get the **same, fully explained answer** every time.
-        </p>
+  - rule: verify_documents
+    priority: 40
+    if:
+      all:
+        - docs.birth_certificate == true
+        - docs.identity_evidence == true
+        - docs.photo_ok == true
+    then:
+      facts.docs_ok: true
+    because: "All required documents are provided."
 
-        <div class="flex flex-wrap justify-center gap-3">
-          <a href="#what" class="px-6 py-3 rounded-full bg-brand-500 hover:bg-brand-400 text-slate-900 font-semibold">
-            Learn How SESL Works
-          </a>
-          <a href="#cli" class="px-6 py-3 rounded-full border border-slate-700 text-slate-300 hover:text-white hover:border-slate-500">
-            Explore the CLI
-          </a>
-        </div>
-      </div>
-    </section>
+  - rule: final_decision
+    priority: 100
+    if:
+      - facts.docs_ok == true
+      - result.eligible != false
+    then:
+      result.eligible: true
+    because: "All requirements satisfied."
 
-    <!-- WHAT IS SESL -->
-    <section id="what" class="py-20 border-t border-slate-800 px-4">
-      <div class="max-w-5xl mx-auto">
-        <h2 class="text-3xl font-semibold mb-4">What is SESL?</h2>
-
-        <p class="text-slate-300 leading-relaxed mb-6">
-          SESL (Simple Expert System Language) is a **forward-chaining expert-system engine** with a clean,
-          human-readable syntax.  
-          It converts text or documents into **rules**, **facts**, and **deterministic logic paths**.
-        </p>
-
-        <p class="text-slate-300 leading-relaxed mb-6">
-          Every SESL answer comes with an **explicit explanation** — which rules were triggered, what facts were used,
-          and the “because” behind each step.  
-          SESL works inside ChatGPT or completely independently on a local machine or server.
-        </p>
-
-        <ul class="grid sm:grid-cols-2 gap-4 text-slate-300 text-sm mt-6">
-          <li class="p-4 rounded-xl bg-slate-900/40 border border-slate-800">Readable by non-programmers</li>
-          <li class="p-4 rounded-xl bg-slate-900/40 border border-slate-800">Deterministic & reproducible</li>
-          <li class="p-4 rounded-xl bg-slate-900/40 border border-slate-800">Traceable & audit-friendly</li>
-          <li class="p-4 rounded-xl bg-slate-900/40 border border-slate-800">Safe under malformed input</li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- PROBLEM WITH LLMs -->
-    <section id="problem" class="py-20 border-t border-slate-800 px-4">
-      <div class="max-w-5xl mx-auto">
-        <h2 class="text-3xl font-semibold mb-6">Why SESL exists</h2>
-
-        <p class="text-slate-300 mb-4">
-          LLMs are powerful, but fundamentally **probabilistic**.  
-          The same question may produce different answers.  
-          They can generate text that looks correct but is factually wrong — a hallucination.
-        </p>
-
-        <p class="text-slate-300 mb-4">
-          SESL solves this by replacing probability-based reasoning with **explicit rules and facts**.
-          The output is always:
-        </p>
-
-        <ul class="list-disc list-inside text-slate-300 space-y-2">
-          <li>Predictable</li>
-          <li>Consistent</li>
-          <li>Auditable</li>
-          <li>Scientifically traceable</li>
-        </ul>
-      </div>
-    </section>
-
-    <!-- FEATURES -->
-    <section id="features" class="py-20 border-t border-slate-800 px-4">
-      <div class="max-w-5xl mx-auto">
-        <h2 class="text-3xl font-semibold mb-10">Core SESL Features</h2>
-
-        <div class="grid md:grid-cols-3 gap-6">
-          <div class="p-6 rounded-2xl bg-slate-900/40 border border-slate-800">
-            <h3 class="font-semibold mb-2">Deterministic Logic</h3>
-            <p class="text-sm text-slate-300">Same input → same output. SESL never “hallucinates.”</p>
-          </div>
-
-          <div class="p-6 rounded-2xl bg-slate-900/40 border border-slate-800">
-            <h3 class="font-semibold mb-2">Human-Readable Rules</h3>
-            <p class="text-sm text-slate-300">SESL rules follow a clear YAML-like structure using names, priorities, facts, tests, and “because”.</p>
-          </div>
-
-          <div class="p-6 rounded-2xl bg-slate-900/40 border border-slate-800">
-            <h3 class="font-semibold mb-2">Explainability</h3>
-            <p class="text-sm text-slate-300">Every result includes a trace of which rules fired and why.</p>
-          </div>
-
-          <div class="p-6 rounded-2xl bg-slate-900/40 border border-slate-800">
-            <h3 class="font-semibold mb-2">Traceable & Auditable</h3>
-            <p class="text-sm text-slate-300">Ideal for eligibility checks, compliance, and risk scoring.</p>
-          </div>
-
-          <div class="p-6 rounded-2xl bg-slate-900/40 border border-slate-800">
-            <h3 class="font-semibold mb-2">Safe Input Handling</h3>
-            <p class="text-sm text-slate-300">Designed to behave predictably — even with imperfect data.</p>
-          </div>
-
-          <div class="p-6 rounded-2xl bg-slate-900/40 border border-slate-800">
-            <h3 class="font-semibold mb-2">Runs Anywhere</h3>
-            <p class="text-sm text-slate-300">Use it inside ChatGPT via MCP or run SESL locally with the CLI.</p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- EXAMPLES -->
-    <section id="examples" class="py-20 border-t border-slate-800 px-4">
-      <div class="max-w-5xl mx-auto">
-        <h2 class="text-3xl font-semibold mb-6">Example Use Cases</h2>
-
-        <p class="text-slate-300 mb-6">
-          SESL is ideal wherever decisions must be **consistent**, **auditable**, and **rule-driven** —
-          such as government processes, compliance checks, risk evaluations, pricing engines, or any expert-system logic.
-        </p>
-
-        <div class="space-y-4 text-sm text-slate-300">
-          <div class="p-5 rounded-xl bg-slate-900/40 border border-slate-800">
-            <strong>Eligibility logic:</strong> passport applications, benefits checks, renewals.
-          </div>
-          <div class="p-5 rounded-xl bg-slate-900/40 border border-slate-800">
-            <strong>Compliance:</strong> policy rules, constraints, validations, audit requirements.
-          </div>
-          <div class="p-5 rounded-xl bg-slate-900/40 border border-slate-800">
-            <strong>Risk & scoring:</strong> thresholds, weighted scoring, decision trees.
-          </div>
-          <div class="p-5 rounded-xl bg-slate-900/40 border border-slate-800">
-            <strong>Pricing engines:</strong> deterministic price calculations and adjustments.
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CLI SECTION -->
-    <section id="cli" class="py-20 border-t border-slate-800 px-4">
-      <div class="max-w-5xl mx-auto">
-        <h2 class="text-3xl font-semibold mb-6">SESL Command Line Interface</h2>
-
-        <p class="text-slate-300 mb-4">
-          SESL includes a full-featured CLI that allows you to build, run, lint, inspect, and debug SESL models outside
-          of ChatGPT.
-        </p>
-
-        <ul class="list-disc list-inside text-slate-300 text-sm space-y-1 mb-6">
-          <li>Load & save SESL files</li>
-          <li>Inspect rules, facts, scenarios</li>
-          <li>Run scenarios normally or with explanation</li>
-          <li>Inline or multiline rule editing</li>
-          <li>Full linting with error & warning reporting</li>
-          <li>Dependency graph generation</li>
-        </ul>
-
-        <div class="rounded-xl bg-slate-900/40 border border-slate-800 p-4">
-<pre class="text-xs text-slate-200 font-mono overflow-x-auto">
-# Run a SESL file
-sesl rules.sesl
-
-# Run with explanation
-sesl describe rules.sesl
-
-# Lint your rules
-sesl lint rules.sesl
-
-# Run a specific scenario
-sesl run rules.sesl --scenario Case1
-</pre>
-        </div>
-      </div>
-    </section>
-
-  </main>
-
-  <!-- Footer -->
-  <footer class="py-8 border-t border-slate-800 text-center text-xs text-slate-400">
-    © <span id="year"></span> SESL. All rights reserved.
-  </footer>
-
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
-
-</body>
-</html>
+facts:
+  - name: Scenario1
+    applicant:
+      age: 22
+      nationality: "British"
+      has_previous_passport: false
+    docs:
+      birth_certificate: true
+      identity_evidence: true
+      photo_ok: true
