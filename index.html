@@ -26,9 +26,9 @@
           },
           colors: {
             brand: {
+              300: "#a5b4fc",
               500: "#6366f1",
               600: "#4f46e5",
-              300: "#a5b4fc"
             }
           }
         }
@@ -37,34 +37,33 @@
   </script>
 </head>
 
-<body class="bg-slate-950 text-slate-100 antialiased dark:bg-slate-950 dark:text-slate-100">
+<body class="bg-slate-950 text-slate-100 antialiased">
 
   <!-- Navigation -->
-  <header class="border-b border-slate-800 bg-slate-950/80 backdrop-blur sticky top-0 z-40 dark:border-slate-700">
-  <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+  <header class="border-b border-slate-800 bg-slate-950/80 backdrop-blur sticky top-0 z-40">
+    <div class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
 
-    <!-- SESL LOGO -->
-    <a href="#" class="flex items-center gap-3">
-      <img src="SESL Logo.png" alt="SESL Logo" class="h-10 w-auto" />
-    </a>
+      <!-- LOGO -->
+      <a href="#" class="flex items-center gap-3">
+        <img src="SESL Logo.png" alt="SESL logo" class="h-10 w-auto" />
+      </a>
 
-    <!-- NAVIGATION -->
-    <nav class="hidden md:flex gap-8 text-sm text-slate-300 dark:text-slate-300">
-      <a href="#what" class="hover:text-white">What is SESL</a>
-      <a href="#problem" class="hover:text-white">Why SESL</a>
-      <a href="#features" class="hover:text-white">Features</a>
-      <a href="#examples" class="hover:text-white">Examples</a>
-      <a href="#cli" class="hover:text-white">CLI</a>
-    </nav>
+      <!-- NAVIGATION -->
+      <nav class="hidden md:flex gap-8 text-sm text-slate-300">
+        <a href="#what" class="hover:text-white">What is SESL</a>
+        <a href="#problem" class="hover:text-white">Why SESL</a>
+        <a href="#features" class="hover:text-white">Features</a>
+        <a href="#examples" class="hover:text-white">Examples</a>
+        <a href="#cli" class="hover:text-white">CLI</a>
+      </nav>
 
-    <!-- THEME TOGGLE -->
-    <button id="themeToggle"
-      class="p-2 rounded-full border border-slate-700 hover:border-slate-500 text-slate-300 hover:text-white">
-      🌙
-    </button>
-  </div>
-</header>
-
+      <!-- THEME TOGGLE -->
+      <button id="themeToggle"
+        class="p-2 rounded-full border border-slate-700 hover:border-slate-500 text-slate-300 hover:text-white">
+        🌙
+      </button>
+    </div>
+  </header>
 
   <main>
 
@@ -75,14 +74,16 @@
           Deterministic, Repeatable and Explainable.<br/>
           <span class="text-brand-300">No hallucinations. No guesswork.</span>
         </h1>
-            <img src="SESL Logo.png" alt="SESL Logo" class="h-10 w-auto" />
+
+        <img src="SESL Logo.png" alt="SESL logo" class="h-16 w-auto mx-auto mb-6" />
+
         <p class="text-lg text-slate-300 max-w-2xl mx-auto mb-8">
           SESL (Simple Expert System Language) is a compact rule-based language that turns any structured text or
           document into rules and facts. Ask SESL a question and get the same, fully explained answer every time.
         </p>
 
         <div class="flex flex-wrap justify-center gap-3">
-          <a href="#what" class="px-6 py-3 rounded-full bg-brand-500 hover:bg-brand-400 text-slate-900 font-semibold">
+          <a href="#what" class="px-6 py-3 rounded-full bg-brand-500 hover:bg-brand-300 text-slate-900 font-semibold">
             Learn How SESL Works
           </a>
           <a href="#cli" class="px-6 py-3 rounded-full border border-slate-700 text-slate-300 hover:text-white hover:border-slate-500">
@@ -104,8 +105,7 @@
 
         <p class="text-slate-300 leading-relaxed mb-6">
           Every SESL answer comes with a detailed explanation showing which rules fired, why they fired, and how the
-          final result was produced.  
-          SESL can run inside ChatGPT (via MCP) or entirely standalone on a local machine.
+          final result was produced. SESL can run inside ChatGPT (via MCP) or entirely standalone on a local machine.
         </p>
 
         <ul class="grid sm:grid-cols-2 gap-4 text-slate-300 text-sm mt-6">
@@ -117,13 +117,13 @@
       </div>
     </section>
 
-    <!-- PROBLEM WITH LLMs -->
+    <!-- PROBLEM -->
     <section id="problem" class="py-20 border-t border-slate-800 px-4">
       <div class="max-w-5xl mx-auto">
         <h2 class="text-3xl font-semibold mb-6">Why SESL exists</h2>
 
         <p class="text-slate-300 mb-4">
-          LLMs produce fluent answers but are inherently probabilistic.  
+          LLMs produce fluent answers but are inherently probabilistic.
           The same question may yield different responses, and hallucinations remain an unavoidable risk.
         </p>
 
@@ -154,27 +154,27 @@
 
           <div class="p-6 rounded-2xl bg-slate-900/40 border border-slate-800">
             <h3 class="font-semibold mb-2">Readable Rules</h3>
-            <p class="text-sm text-slate-300">A clear YAML-like structure with names, priorities, facts, tests, and “because”.</p>
+            <p class="text-sm text-slate-300">Clear YAML-like structure with names, priorities, tests, and “because”.</p>
           </div>
 
           <div class="p-6 rounded-2xl bg-slate-900/40 border border-slate-800">
             <h3 class="font-semibold mb-2">Explainability</h3>
-            <p class="text-sm text-slate-300">Every result includes a rule trace showing exactly how the answer was produced.</p>
+            <p class="text-sm text-slate-300">Every result includes a rule trace showing exactly how it was derived.</p>
           </div>
 
           <div class="p-6 rounded-2xl bg-slate-900/40 border border-slate-800">
             <h3 class="font-semibold mb-2">Auditability</h3>
-            <p class="text-sm text-slate-300">Perfect for regulated or high-trust decisions.</p>
+            <p class="text-sm text-slate-300">Ideal for regulated or high-trust decisions.</p>
           </div>
 
           <div class="p-6 rounded-2xl bg-slate-900/40 border border-slate-800">
             <h3 class="font-semibold mb-2">Robust Input Handling</h3>
-            <p class="text-sm text-slate-300">Built to remain safe and predictable even with malformed data.</p>
+            <p class="text-sm text-slate-300">Safe and predictable even with malformed data.</p>
           </div>
 
           <div class="p-6 rounded-2xl bg-slate-900/40 border border-slate-800">
             <h3 class="font-semibold mb-2">Runs Anywhere</h3>
-            <p class="text-sm text-slate-300">Use via CLI or ChatGPT’s MCP interface.</p>
+            <p class="text-sm text-slate-300">CLI or ChatGPT’s MCP interface.</p>
           </div>
         </div>
       </div>
@@ -191,20 +191,19 @@
 
         <div class="space-y-4 text-sm text-slate-300">
           <div class="p-5 rounded-xl bg-slate-900/40 border border-slate-800">
-            <strong>Eligibility logic:</strong> passport applications, benefit checks, renewals.
+            <strong>Eligibility logic:</strong> passport applications, benefit checks.
           </div>
           <div class="p-5 rounded-xl bg-slate-900/40 border border-slate-800">
-            <strong>Compliance:</strong> policy rules, constraints, audit definitions.
+            <strong>Compliance:</strong> policy rules, constraints, audits.
           </div>
           <div class="p-5 rounded-xl bg-slate-900/40 border border-slate-800">
-            <strong>Risk & scoring:</strong> weighted scoring, decision thresholds.
+            <strong>Risk & scoring:</strong> weighted scoring, thresholds.
           </div>
           <div class="p-5 rounded-xl bg-slate-900/40 border border-slate-800">
-            <strong>Pricing engines:</strong> deterministic price calculations.
+            <strong>Pricing engines:</strong> deterministic calculations.
           </div>
         </div>
 
-        <!-- DOWNLOAD EXAMPLE SESL FILE -->
         <div class="mt-10">
           <a href="passport_example.sesl" download
             class="text-brand-300 hover:text-brand-200 underline text-sm">
@@ -214,21 +213,21 @@
       </div>
     </section>
 
-    <!-- CLI SECTION -->
+    <!-- CLI -->
     <section id="cli" class="py-20 border-t border-slate-800 px-4">
       <div class="max-w-5xl mx-auto">
         <h2 class="text-3xl font-semibold mb-6">SESL Command Line Interface</h2>
 
         <p class="text-slate-300 mb-4">
-          The SESL CLI allows full rule editing, linting, debugging, and scenario execution outside of ChatGPT.
+          The SESL CLI enables rule editing, linting, debugging, and scenario execution outside of ChatGPT.
         </p>
 
         <ul class="list-disc list-inside text-slate-300 text-sm space-y-1 mb-6">
           <li>Load & save SESL files</li>
-          <li>Inspect rules, facts, and scenarios</li>
-          <li>Run scenarios (normal or “described”)</li>
-          <li>Inline or multiline rule editing</li>
-          <li>Full linting with error/warning reporting</li>
+          <li>Inspect rules and facts</li>
+          <li>Run scenarios (normal or described)</li>
+          <li>Inline or multiline editing</li>
+          <li>Full linting with warnings/errors</li>
           <li>Dependency graph generation</li>
         </ul>
 
@@ -257,16 +256,21 @@ sesl run rules.sesl --scenario Case1
     © <span id="year"></span> SESL. All rights reserved.
   </footer>
 
-  <!-- Theme toggle logic -->
+  <!-- Theme toggle -->
   <script>
     const btn = document.getElementById("themeToggle");
+
     btn.addEventListener("click", () => {
       const root = document.documentElement;
       const isDark = root.classList.toggle("dark");
       localStorage.setItem("theme", isDark ? "dark" : "light");
       btn.textContent = isDark ? "☀️" : "🌙";
     });
+
+    // Initialize icon
     btn.textContent = document.documentElement.classList.contains("dark") ? "☀️" : "🌙";
+
+    // Footer year
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 
