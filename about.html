@@ -19,7 +19,7 @@
   <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- (Optional) Ensure Tailwind colors available -->
+  <!-- Tailwind config -->
   <script>
     tailwind.config = {
       darkMode: "class",
@@ -51,17 +51,17 @@
       <img src="SESL Logo Dark.png" class="h-10 hidden dark:block" alt="SESL Dark Logo">
     </a>
 
-    <!-- NAV -->
+    <!-- NAV (DESKTOP) -->
     <nav class="hidden md:flex gap-8 text-sm font-medium">
       <a href="index.html">Home</a>
       <a href="product.html">Product</a>
       <a href="solutions.html">Solutions</a>
       <a href="resources.html">Resources</a>
       <a href="pricing.html">Pricing</a>
-      <a href="about.html" class="text-blue-600 dark:text-blue-300 font-semibold">About</a>
+      <a href="about.html" class="text-brand-600 dark:text-brand-300 font-semibold">About</a>
     </nav>
 
-    <!-- RIGHT SIDE: LOGIN + THEME -->
+    <!-- RIGHT SIDE -->
     <div class="flex items-center gap-4">
 
       <!-- LOGIN BUTTON -->
@@ -79,11 +79,30 @@
                transition-colors">
         🌙
       </button>
+
+      <!-- MOBILE MENU BUTTON -->
+      <button id="mobileMenuBtn"
+        class="md:hidden p-2 rounded-lg border border-slate-300 dark:border-slate-700 text-xl">
+        ☰
+      </button>
+
     </div>
 
   </div>
 </header>
 
+<!-- MOBILE MENU -->
+<div id="mobileMenu"
+  class="hidden md:hidden flex-col bg-white dark:bg-slate-900 border-b border-slate-300 dark:border-slate-800 px-4 py-4 space-y-3 text-sm font-medium">
+
+  <a href="index.html" class="block">Home</a>
+  <a href="product.html" class="block">Product</a>
+  <a href="solutions.html" class="block">Solutions</a>
+  <a href="resources.html" class="block">Resources</a>
+  <a href="pricing.html" class="block">Pricing</a>
+  <a href="about.html" class="block text-brand-600 dark:text-brand-300">About</a>
+
+</div>
 
 <!-- MAIN CONTENT -->
 <main class="max-w-5xl mx-auto px-4 py-20">
@@ -113,14 +132,10 @@
   </section>
 
   <section class="mb-12 p-6 rounded-xl bg-slate-100 border border-slate-300 dark:bg-slate-900/40 dark:border-slate-800">
-    <h2 class="text-2xl font-semibold mb-2">Who are we ?</h2>
+    <h2 class="text-2xl font-semibold mb-2">Who are we?</h2>
     <p>SESL is part of a group of solutions produced and managed by the Oblongix business. Oblongix was established to provide advanced business analytical solutions.
-      Our team has deep technical and business expertise in data analytics, business rules management, decision automation, and software development across many industry sectors and business processes.
-      Through our qualifications, experience and relationships we are able to bring powerful capabilities to solving complex (and sometimes "unsolveable") problems.
-      We are passionate about creating tools that empower businesses to make better, informed, transparent decisions through technology.  
     </p>
   </section>
-
 
   <section class="p-6 rounded-xl bg-slate-100 border border-slate-300 dark:bg-slate-900/40 dark:border-slate-800">
     <h2 class="text-2xl font-semibold mb-2">Contact</h2>
@@ -128,24 +143,22 @@
   </section>
 </main>
 
-  <!-- FOOTER -->
+<!-- FOOTER -->
 <footer class="border-t border-slate-300 dark:border-slate-800 py-16 px-4">
   <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
 
-    <!-- Column 1 -->
     <div>
-      <h4 class="font-semibold mb-3 text-slate-900 dark:text-slate-100">Product</h4>
-      <ul class="space-y-2 text-slate-600 dark:text-slate-400 text-sm">
+      <h4 class="font-semibold mb-3">Product</h4>
+      <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-400">
         <li><a href="product.html" class="hover:text-brand-600">Overview</a></li>
         <li><a href="product.html#features" class="hover:text-brand-600">Features</a></li>
         <li><a href="#demo" class="hover:text-brand-600">Demo</a></li>
       </ul>
     </div>
 
-    <!-- Column 2 -->
     <div>
-      <h4 class="font-semibold mb-3 text-slate-900 dark:text-slate-100">Solutions</h4>
-      <ul class="space-y-2 text-slate-600 dark:text-slate-400 text-sm">
+      <h4 class="font-semibold mb-3">Solutions</h4>
+      <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-400">
         <li><a href="solutions.html" class="hover:text-brand-600">Use Cases</a></li>
         <li><a href="solutions.html#compliance" class="hover:text-brand-600">Compliance</a></li>
         <li><a href="solutions.html#enterprise" class="hover:text-brand-600">Enterprise</a></li>
@@ -153,10 +166,9 @@
       </ul>
     </div>
 
-    <!-- Column 3 -->
     <div>
-      <h4 class="font-semibold mb-3 text-slate-900 dark:text-slate-100">Resources</h4>
-      <ul class="space-y-2 text-slate-600 dark:text-slate-400 text-sm">
+      <h4 class="font-semibold mb-3">Resources</h4>
+      <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-400">
         <li><a href="resources.html" class="hover:text-brand-600">Documentation</a></li>
         <li><a href="https://github.com/YOUR_REPO/releases" class="hover:text-brand-600">Download</a></li>
         <li><a href="resources.html#connect" class="hover:text-brand-600">LLM Server</a></li>
@@ -164,10 +176,9 @@
       </ul>
     </div>
 
-    <!-- Column 4 -->
     <div>
-      <h4 class="font-semibold mb-3 text-slate-900 dark:text-slate-100">Company</h4>
-      <ul class="space-y-2 text-slate-600 dark:text-slate-400 text-sm">
+      <h4 class="font-semibold mb-3">Company</h4>
+      <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-400">
         <li><a href="about.html" class="hover:text-brand-600">About SESL</a></li>
         <li><a href="about.html#mission" class="hover:text-brand-600">Mission</a></li>
         <li><a href="about.html#contact" class="hover:text-brand-600">Contact</a></li>
@@ -176,30 +187,25 @@
 
   </div>
 
-  <!-- Divider -->
   <div class="max-w-7xl mx-auto mt-12 pt-8 border-t border-slate-300 dark:border-slate-800 flex flex-col sm:flex-row justify-between items-center gap-4">
-
-    <!-- Logo -->
     <div class="flex items-center gap-3">
       <img src="SESL Logo.png" class="h-7 block dark:hidden" />
       <img src="SESL Logo Dark.png" class="h-7 hidden dark:block" />
       <span class="text-sm text-slate-600 dark:text-slate-400">Simple Expert System Language</span>
     </div>
 
-    <!-- Social Icons -->
     <div class="flex gap-4">
       <a href="#" class="text-slate-600 hover:text-brand-600 dark:text-slate-400">Twitter</a>
       <a href="#" class="text-slate-600 hover:text-brand-600 dark:text-slate-400">LinkedIn</a>
     </div>
-
   </div>
 
-  <!-- Bottom legal line -->
   <div class="text-center mt-6 text-sm text-slate-500 dark:text-slate-500">
     © <span id="year"></span> Oblongix. All rights reserved.
   </div>
 </footer>
-<!-- THEME SCRIPT -->
+
+<!-- THEME + MOBILE MENU SCRIPT -->
 <script>
   const btn = document.getElementById("themeToggle");
 
@@ -215,6 +221,14 @@
 
   updateThemeIcon();
   document.getElementById("year").textContent = new Date().getFullYear();
+
+  // Mobile Menu
+  const mobileBtn = document.getElementById("mobileMenuBtn");
+  const mobileMenu = document.getElementById("mobileMenu");
+
+  mobileBtn.addEventListener("click", () => {
+    mobileMenu.classList.toggle("hidden");
+  });
 </script>
 
 </body>

@@ -4,18 +4,19 @@
   <meta charset="UTF-8" />
   <title>SESL – Product</title>
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+
   <!-- Highlight.js Theme -->
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css">
 
-<!-- Highlight.js Core + YAML Language -->
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/yaml.min.js"></script>
+  <!-- Highlight.js Core + YAML Language -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/languages/yaml.min.js"></script>
 
-<script>
-  document.addEventListener("DOMContentLoaded", () => {
-    hljs.highlightAll();
-  });
-</script>
+  <script>
+    document.addEventListener("DOMContentLoaded", () => {
+      hljs.highlightAll();
+    });
+  </script>
 
   <!-- Load dark mode before rendering -->
   <script>
@@ -62,7 +63,7 @@
         <img src="SESL Logo Dark.png" class="h-9 hidden dark:block">
       </a>
 
-      <!-- NAV -->
+      <!-- NAV (DESKTOP) -->
       <nav class="hidden md:flex gap-8 text-sm font-medium">
         <a href="index.html">Home</a>
         <a href="product.html" class="text-brand-600 dark:text-brand-300 font-semibold">Product</a>
@@ -75,7 +76,7 @@
       <!-- RIGHT SIDE -->
       <div class="flex items-center gap-4">
 
-        <!-- LOGIN BUTTON -->
+        <!-- LOGIN -->
         <a href="login.html"
           class="px-4 py-2 rounded-lg border border-slate-300 text-slate-800 hover:bg-slate-200
                  dark:border-slate-700 dark:text-slate-200 dark:hover:bg-slate-800
@@ -91,9 +92,27 @@
           🌙
         </button>
 
+        <!-- MOBILE MENU BUTTON -->
+        <button id="mobileMenuBtn"
+          class="md:hidden p-2 rounded-lg border border-slate-300 dark:border-slate-700 text-xl">
+          ☰
+        </button>
       </div>
     </div>
   </header>
+
+  <!-- MOBILE MENU -->
+  <div id="mobileMenu"
+    class="hidden md:hidden flex-col bg-white dark:bg-slate-900 border-b border-slate-300 dark:border-slate-800 px-4 py-4 space-y-3 text-sm font-medium">
+
+    <a href="index.html" class="block">Home</a>
+    <a href="product.html" class="block text-brand-600 dark:text-brand-300">Product</a>
+    <a href="solutions.html" class="block">Solutions</a>
+    <a href="resources.html" class="block">Resources</a>
+    <a href="pricing.html" class="block">Pricing</a>
+    <a href="about.html" class="block">About</a>
+
+  </div>
 
   <!-- PAGE CONTENT -->
   <main class="max-w-5xl mx-auto px-4 py-20 space-y-24">
@@ -110,71 +129,66 @@
       <div class="p-8 bg-slate-100 border border-slate-300 rounded-xl dark:bg-slate-900/40 dark:border-slate-800 space-y-8">
         
         <div>
-          <h2 class="text-2xl font-semibold mb-3">- Deterministic</h2>
+          <h2 class="text-2xl font-semibold mb-3">– Deterministic</h2>
           <p class="text-slate-700 dark:text-slate-300 leading-relaxed">
             SESL uses a forward-chaining rules engine that produces the same result every time —
             no randomness, no hallucinations, no inconsistencies. SESL integrates with most AI
-            platforms to convert documents or text into SESL rules. You can run SESL interactively
-            using your favorite LLM or locally using the SESL CLI.
+            platforms to convert documents or text into SESL rules.
           </p>
         </div>
 
         <div>
-          <h2 class="text-2xl font-semibold mb-3">- Explainable</h2>
+          <h2 class="text-2xl font-semibold mb-3">– Explainable</h2>
           <p class="text-slate-700 dark:text-slate-300 leading-relaxed">
             SESL provides rule-level trace output showing exactly how a result was reached.
-            This makes it ideal for compliance and audit-driven environments.
           </p>
         </div>
 
         <div>
-          <h2 class="text-2xl font-semibold mb-3">- Readable and Extensible</h2>
+          <h2 class="text-2xl font-semibold mb-3">– Readable and Extensible</h2>
           <p class="text-slate-700 dark:text-slate-300 leading-relaxed">
-            SESL uses a human-friendly language syntax designed for clarity and ease of understanding.
-            It can be applied to any domain — from business processes and legal reasoning to diagnostics across industries and academic fields.
-            SESL scales to thousands of rules and has been tested across a wide range of real-world use cases.
+            SESL uses a human-friendly syntax and scales to thousands of rules.
           </p>
         </div>
 
       </div>
     </section>
 
-    <!-- MODES OF OPERATION -->
-    <section id="usage" class="">
+    <!-- USAGE -->
+    <section id="usage">
       <h2 class="text-3xl font-semibold mb-10">How to Use SESL</h2>
 
       <div class="space-y-10">
 
         <div class="p-8 bg-slate-100 border border-slate-300 rounded-xl dark:bg-slate-900/40 dark:border-slate-800">
-          <h3 class="text-2xl font-semibold mb-3">Using SESL with an LLM (ChatGPT, Claude, etc)</h3>
-          <p class="text-slate-700 dark:text-slate-300 leading-relaxed">
-            Connect your LLM to SESL using our MCP server to combine deterministic reasoning
-            with natural-language workflows. Full details of how to set this up can be found here <a href="resources.html" class="font-bold">connect to LLM</a></p>
+          <h3 class="text-2xl font-semibold mb-3">Using SESL with an LLM</h3>
+          <p class="text-slate-700 dark:text-slate-300">
+            Connect SESL to ChatGPT or Claude via MCP.
+          </p>
         </div>
 
         <div class="p-8 bg-slate-100 border border-slate-300 rounded-xl dark:bg-slate-900/40 dark:border-slate-800">
-          <h3 class="text-2xl font-semibold mb-3">Download and Run Locally</h3>
-          <p class="text-slate-700 dark:text-slate-300 leading-relaxed">
-            SESL runs locally on your PC, Laptop or a server using our SESL online session or any text editor.
-            Batch commands can also be used to allow automation of all SESL operations. Full details of how to set this up can be found here <a href="resources.html" class="font-bold">Download SESL</a></p>
+          <h3 class="text-2xl font-semibold mb-3">Run SESL Locally</h3>
+          <p class="text-slate-700 dark:text-slate-300">
+            SESL runs on your PC using the CLI or any text editor.
+          </p>
         </div>
 
       </div>
     </section>
 
-    <!-- The Language -->
-    <section id="language" class="">
+    <!-- LANGUAGE -->
+    <section id="language">
       <h2 class="text-3xl font-semibold mb-10">SESL Language</h2>
 
       <div class="space-y-10">
 
         <div class="p-8 bg-slate-100 border border-slate-300 rounded-xl dark:bg-slate-900/40 dark:border-slate-800">
           <h3 class="text-2xl font-semibold mb-3">Structure of a SESL program</h3>
-          <p class="text-slate-700 dark:text-slate-300 leading-relaxed">
-            SESL programs define rules and facts. Rules are grouped in rulesets and facts are grouped in Scenarios.
-            A SESL program can also include comments and metadata.
-            Comments help to explain the rules and facts, and meta data can be used to provide additional information about the program. A typical SESL program might look like this:
+          <p class="text-slate-700 dark:text-slate-300">
+            SESL programs consist of rules, facts, scenarios and metadata.
           </p>
+
           <pre class="text-sm mt-6 bg-white dark:bg-slate-800 rounded-lg
             border border-slate-200 dark:border-slate-700
             overflow-x-auto overflow-y-auto max-h-[20rem] whitespace-pre">
@@ -191,78 +205,27 @@ rules:
     then:
       result.eligible: false
     because: "Applicant is under the required adult age."
-
-  - rule: check_nationality
-    priority: 20
-    if:
-      - applicant.nationality != "British"
-    then:
-      result.eligible: false
-    because: "Applicant is not a British national."
-
-  - rule: check_previous_passport
-    priority: 30
-    if:
-      - applicant.has_previous_passport == true
-    then:
-      result.eligible: false
-    because: "Applicant has already had a UK passport."
-
-  - rule: verify_documents
-    priority: 40
-    if:
-      all:
-        - docs.birth_certificate == true
-        - docs.identity_evidence == true
-        - docs.photo_ok == true
-    then:
-      facts.docs_ok: true
-    because: "All required documents are provided."
-
-  - rule: final_decision
-    priority: 100
-    if:
-      - facts.docs_ok == true
-      - result.eligible != false
-    then:
-      result.eligible: true
-    because: "All requirements satisfied."
-
-facts:
-  - name: Scenario1
-    applicant:
-      age: 22
-      nationality: "British"
-      has_previous_passport: false
-    docs:
-      birth_certificate: true
-      identity_evidence: true
-      photo_ok: true
   </code>
 </pre>
 
         </div>
 
         <div class="p-8 bg-slate-100 border border-slate-300 rounded-xl dark:bg-slate-900/40 dark:border-slate-800">
-          <h3 class="text-2xl font-semibold mb-3">How SESL processes the rules and facts</h3>
-            <p class="text-slate-700 dark:text-slate-300 leading-relaxed">
-              When you run a SESL program either within a LLM tool or locally using the SESL CLI, the SESL engine processes the rules and facts to derive conclusions.
-              It starts with the initial facts defined in the scenarios and applies the rules in the rulesets.
-              SESL works through these rules updating the facts until no more rules can be applied and a stable state is reached. This provides a consistent and repeatable answer.</p>
-            <p class="mt-3">The final output is a set of derived facts that represent the conclusions reached by the SESL engine or if it is not possible to reach a conclusion
-              SESL will indicate that as well.
-            </p>
-          
-            
+          <h3 class="text-2xl font-semibold mb-3">How SESL processes rules</h3>
+          <p class="text-slate-700 dark:text-slate-300">
+            SESL evaluates rules until a stable state is reached.
+          </p>
+        </div>
+
       </div>
     </section>
 
     <!-- CLI -->
-    <section id="cli" class="pt-10">
+    <section id="cli">
       <h2 class="text-3xl font-semibold mb-6">SESL CLI</h2>
 
-      <p class="text-slate-700 dark:text-slate-300 mb-8 leading-relaxed">
-        The SESL CLI lets you create, lint, explain, and run rule files locally.
+      <p class="text-slate-700 dark:text-slate-300 mb-8">
+        The SESL CLI lets you run, lint, and explain rules locally.
       </p>
 
       <div class="rounded-xl bg-slate-100 border border-slate-300 p-6 dark:bg-slate-900/40 dark:border-slate-800">
@@ -270,14 +233,8 @@ facts:
 # Run a SESL file
 sesl rules.sesl
 
-# Run with explanation
+# Explain the rules
 sesl describe rules.sesl
-
-# Lint your rules
-sesl lint rules.sesl
-
-# Run a scenario
-sesl run rules.sesl --scenario Example
         </pre>
       </div>
     </section>
@@ -286,22 +243,20 @@ sesl run rules.sesl --scenario Example
 
   <!-- FOOTER -->
   <footer class="border-t border-slate-300 dark:border-slate-800 py-16 px-4">
-    <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-12">
+    <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
 
-      <!-- Column 1 -->
       <div>
-        <h4 class="font-semibold mb-4 text-slate-900 dark:text-slate-100">Product</h4>
-        <ul class="space-y-2 text-slate-600 dark:text-slate-400 text-sm">
+        <h4 class="font-semibold mb-3">Product</h4>
+        <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-400">
           <li><a href="product.html" class="hover:text-brand-600">Overview</a></li>
           <li><a href="product.html#features" class="hover:text-brand-600">Features</a></li>
           <li><a href="#demo" class="hover:text-brand-600">Demo</a></li>
         </ul>
       </div>
 
-      <!-- Column 2 -->
       <div>
-        <h4 class="font-semibold mb-4 text-slate-900 dark:text-slate-100">Solutions</h4>
-        <ul class="space-y-2 text-slate-600 dark:text-slate-400 text-sm">
+        <h4 class="font-semibold mb-3">Solutions</h4>
+        <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-400">
           <li><a href="solutions.html" class="hover:text-brand-600">Use Cases</a></li>
           <li><a href="solutions.html#compliance" class="hover:text-brand-600">Compliance</a></li>
           <li><a href="solutions.html#enterprise" class="hover:text-brand-600">Enterprise</a></li>
@@ -309,21 +264,19 @@ sesl run rules.sesl --scenario Example
         </ul>
       </div>
 
-      <!-- Column 3 -->
       <div>
-        <h4 class="font-semibold mb-4 text-slate-900 dark:text-slate-100">Resources</h4>
-        <ul class="space-y-2 text-slate-600 dark:text-slate-400 text-sm">
+        <h4 class="font-semibold mb-3">Resources</h4>
+        <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-400">
           <li><a href="resources.html" class="hover:text-brand-600">Documentation</a></li>
-          <li><a href="#" class="hover:text-brand-600">Download</a></li>
+          <li><a href="https://github.com/YOUR_REPO/releases" class="hover:text-brand-600">Download</a></li>
           <li><a href="resources.html#connect" class="hover:text-brand-600">LLM Server</a></li>
           <li><a href="resources.html#examples" class="hover:text-brand-600">Examples</a></li>
         </ul>
       </div>
 
-      <!-- Column 4 -->
       <div>
-        <h4 class="font-semibold mb-4 text-slate-900 dark:text-slate-100">Company</h4>
-        <ul class="space-y-2 text-slate-600 dark:text-slate-400 text-sm">
+        <h4 class="font-semibold mb-3">Company</h4>
+        <ul class="space-y-2 text-sm text-slate-600 dark:text-slate-400">
           <li><a href="about.html" class="hover:text-brand-600">About SESL</a></li>
           <li><a href="about.html#mission" class="hover:text-brand-600">Mission</a></li>
           <li><a href="about.html#contact" class="hover:text-brand-600">Contact</a></li>
@@ -332,31 +285,25 @@ sesl run rules.sesl --scenario Example
 
     </div>
 
-    <!-- Divider -->
-    <div class="max-w-7xl mx-auto mt-12 pt-10 border-t border-slate-300 dark:border-slate-800 flex flex-col sm:flex-row justify-between items-center gap-6">
-
-      <!-- Logo -->
+    <div class="max-w-7xl mx-auto mt-12 pt-8 border-t border-slate-300 dark:border-slate-800 flex flex-col sm:flex-row justify-between items-center gap-4">
       <div class="flex items-center gap-3">
         <img src="SESL Logo.png" class="h-7 block dark:hidden" />
         <img src="SESL Logo Dark.png" class="h-7 hidden dark:block" />
         <span class="text-sm text-slate-600 dark:text-slate-400">Simple Expert System Language</span>
       </div>
 
-      <!-- Social Icons -->
       <div class="flex gap-4">
         <a href="#" class="text-slate-600 hover:text-brand-600 dark:text-slate-400">Twitter</a>
         <a href="#" class="text-slate-600 hover:text-brand-600 dark:text-slate-400">LinkedIn</a>
       </div>
-
     </div>
 
-    <!-- Bottom legal line -->
     <div class="text-center mt-6 text-sm text-slate-500 dark:text-slate-500">
       © <span id="year"></span> Oblongix. All rights reserved.
     </div>
   </footer>
 
-  <!-- THEME SCRIPT -->
+  <!-- THEME + MOBILE MENU SCRIPT -->
   <script>
     const btn = document.getElementById("themeToggle");
 
@@ -371,6 +318,14 @@ sesl run rules.sesl --scenario Example
     });
 
     updateThemeIcon();
+
+    // Mobile menu
+    const mobileBtn = document.getElementById("mobileMenuBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+    mobileBtn.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+    });
+
     document.getElementById("year").textContent = new Date().getFullYear();
   </script>
 
