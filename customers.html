@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>SESL – About</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8" />
+  <title>SESL – Customers</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
 
   <!-- Load dark mode before rendering -->
   <script>
@@ -19,7 +19,7 @@
   <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
 
-  <!-- Tailwind config -->
+  <!-- Tailwind brand colors -->
   <script>
     tailwind.config = {
       darkMode: "class",
@@ -29,55 +29,51 @@
             brand: {
               300: "#a5b4fc",
               500: "#6366f1",
-              600: "#4f46e5",
+              600: "#4f46e5"
             }
           }
         }
       }
     };
   </script>
-
 </head>
 
-<body class="bg-white text-slate-900 dark:bg-slate-950 dark:text-slate-100 antialiased">
+<body class="bg-white dark:bg-slate-950 text-slate-900 dark:text-slate-100">
 
 <!-- HEADER -->
 <header class="border-b border-slate-300 bg-white/80 backdrop-blur sticky top-0 z-40 dark:border-slate-800 dark:bg-slate-950/80">
   <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
-
+    
     <!-- LOGO -->
     <a href="index.html" class="flex items-center gap-3">
-      <img src="SESL Logo.png" class="h-10 block dark:hidden" alt="SESL Logo">
-      <img src="SESL Logo Dark.png" class="h-10 hidden dark:block" alt="SESL Dark Logo">
+      <img src="SESL Logo.png" class="h-9 block dark:hidden" />
+      <img src="SESL Logo Dark.png" class="h-9 hidden dark:block" />
     </a>
 
-    <!-- NAV (DESKTOP) -->
+    <!-- NAV (desktop) -->
     <nav class="hidden md:flex gap-8 text-sm font-medium">
       <a href="index.html">Home</a>
       <a href="product.html">Product</a>
       <a href="solutions.html">Solutions</a>
-      <a href="Customers.html">Customers</a>
+      <a href="customers.html" class="text-brand-600 dark:text-brand-300 font-semibold">Customers</a>
       <a href="resources.html">Resources</a>
       <a href="pricing.html">Pricing</a>
-      <a href="about.html" class="text-brand-600 dark:text-brand-300 font-semibold">About</a>
+      <a href="about.html">About</a>
     </nav>
 
-    <!-- RIGHT SIDE -->
     <div class="flex items-center gap-4">
 
-      <!-- LOGIN BUTTON -->
+      <!-- LOGIN -->
       <a href="login.html"
         class="px-4 py-2 rounded-lg border border-slate-300 text-slate-800 hover:bg-slate-200
-               dark:border-slate-700 dark:text-slate-200 dark:hover:bg-slate-800
-               text-sm font-medium transition-colors">
+               dark:border-slate-700 dark:text-slate-200 dark:hover:bg-slate-800 text-sm transition">
         Login
       </a>
 
-      <!-- THEME BUTTON -->
+      <!-- THEME -->
       <button id="themeToggle"
         class="p-2 rounded-full border border-slate-300 text-slate-800 hover:bg-slate-200
-               dark:border-slate-700 dark:text-slate-300 dark:hover:bg-slate-800
-               transition-colors">
+               dark:border-slate-700 dark:text-slate-300 dark:hover:bg-slate-800 transition">
         🌙
       </button>
 
@@ -86,7 +82,6 @@
         class="md:hidden p-2 rounded-lg border border-slate-300 dark:border-slate-700 text-xl">
         ☰
       </button>
-
     </div>
 
   </div>
@@ -96,53 +91,70 @@
 <div id="mobileMenu"
   class="hidden md:hidden flex-col bg-white dark:bg-slate-900 border-b border-slate-300 dark:border-slate-800 px-4 py-4 space-y-3 text-sm font-medium">
 
-  <a href="index.html" class="block">Home</a>
-  <a href="product.html" class="block">Product</a>
-  <a href="solutions.html" class="block">Solutions</a>
-  <a href="resources.html" class="block">Resources</a>
-  <a href="pricing.html" class="block">Pricing</a>
-  <a href="about.html" class="block text-brand-600 dark:text-brand-300">About</a>
+  <a href="index.html">Home</a>
+  <a href="product.html">Product</a>
+  <a href="solutions.html">Solutions</a>
+  <a href="resources.html">Resources</a>
+  <a href="pricing.html">Pricing</a>
+  <a href="about.html">About</a>
+  <a href="customers.html" class="text-brand-600 dark:text-brand-300">Customers</a>
 
 </div>
 
-<!-- MAIN CONTENT -->
-<main class="max-w-5xl mx-auto px-4 py-20">
-  <h1 class="text-4xl font-bold mb-10">About SESL</h1>
-
-  <section class="mb-12 p-6 rounded-xl bg-slate-100 border border-slate-300 dark:bg-slate-900/40 dark:border-slate-800">
-    <h2 class="text-2xl font-semibold mb-2">Our Mission</h2>
-    <p>To bring deterministic, transparent, explainable reasoning to automated decision systems.</p>
-  </section>
-
-  <section class="mb-12 p-6 rounded-xl bg-slate-100 border border-slate-300 dark:bg-slate-900/40 dark:border-slate-800">
-    <h2 class="text-2xl font-semibold mb-2">Founders</h2>
-    <p>Vince Powell has spent over 25 years working in businesses developing, delivering and using technology to grow businesses and make them more efficent. 
-      Unusally while holding senior business rules, Vince continues to be deeply engaged with the technology.
-      Fustrated with the lack of transparency and explainability in AI systems, and concerned with the effort involved in trying to them to answer correctly.
-      Vince founded SESL to create a solution that prioritises clarity and accountability in automated decision-making.
+<!-- HERO -->
+<section class="py-24 px-4 text-center">
+  <div class="max-w-3xl mx-auto">
+    <h1 class="text-4xl sm:text-5xl font-bold mb-6">How organisations use SESL</h1>
+    <p class="text-lg text-slate-700 dark:text-slate-300 max-w-2xl mx-auto">
+      From compliance automation to eligibility engines and risk modelling — SESL powers reliable,
+      deterministic decision systems across industries.
     </p>
-  </section>
+  </div>
+</section>
 
-  <section class="mb-12 p-6 rounded-xl bg-slate-100 border border-slate-300 dark:bg-slate-900/40 dark:border-slate-800">
-    <h2 class="text-2xl font-semibold mb-2">Roadmap</h2>
-    <p>We are at the start of our journey. Having developed the core rules engine, the user interface (the CLI and the MCP server)
-      and run over 10,000 tests we want to get the technology out to people to use and develop industry specific solutions.</p>
-    <p class="mb-2">We don't plan to change the engine or the language (other than bug fixes),
-      but do see value in having more tools to manage the rules and scenarios, and improving the presentation of the rule tracing and fact usage.</p>
-    <p class="mb-2">We would be delighted to hear from you if you have any requests, suggestions or even just comments !</p>
-  </section>
+<!-- STORIES GRID -->
+<section class="px-4 pb-32">
+  <div class="max-w-7xl mx-auto grid gap-10 sm:grid-cols-2 lg:grid-cols-3">
 
-  <section class="mb-12 p-6 rounded-xl bg-slate-100 border border-slate-300 dark:bg-slate-900/40 dark:border-slate-800">
-    <h2 class="text-2xl font-semibold mb-2">Who are we?</h2>
-    <p>SESL is part of a group of solutions produced and managed by the Oblongix business. Oblongix was established to provide advanced business analytical solutions.
-    </p>
-  </section>
+    <!-- CUSTOMER STORY CARD -->
+    <div class="p-8 rounded-2xl bg-slate-100 border border-slate-300 dark:bg-slate-900/40 dark:border-slate-800 flex flex-col">
+      <img src="customer1-logo.png" class="h-48 opacity-80" alt="">
+      <h3 class="text-xl font-semibold mb-3">Automating Passport Eligibility</h3>
+      <p class="text-slate-600 dark:text-slate-400 mb-6 flex-1">
+        SESL helped a government team convert complex legal rules into a deterministic eligibility engine
+        with full auditability and zero ambiguity.
+      </p>
+      <a href="customer1-passport.html" class="mt-auto inline-block px-5 py-2 rounded-lg bg-brand-600 text-white hover:bg-brand-500 transition font-semibold">
+        Read story →
+      </a>
+    </div>
 
-  <section class="p-6 rounded-xl bg-slate-100 border border-slate-300 dark:bg-slate-900/40 dark:border-slate-800">
-    <h2 class="text-2xl font-semibold mb-2">Contact</h2>
-    <p>Email: @vincent.powell@oblongix</p>
-  </section>
-</main>
+    <div class="p-8 rounded-2xl bg-slate-100 border border-slate-300 dark:bg-slate-900/40 dark:border-slate-800 flex flex-col">
+      <img src="customer2-logo.png" class="h-48 opacity-80" alt="">
+      <h3 class="text-xl font-semibold mb-3">Policy Interpretation at Scale</h3>
+      <p class="text-slate-600 dark:text-slate-400 mb-6 flex-1">
+        Using SESL, a regulatory organisation transformed hundreds of pages of inconsistent policy text
+        into transparent decision logic.
+      </p>
+      <a href="customer2-policy.html" class="mt-auto inline-block px-5 py-2 rounded-lg bg-brand-600 text-white hover:bg-brand-500 transition font-semibold">
+        Read story →
+      </a>
+    </div>
+
+    <div class="p-8 rounded-2xl bg-slate-100 border border-slate-300 dark:bg-slate-900/40 dark:border-slate-800 flex flex-col">
+      <img src="customer3-logo.png" class="h-48 opacity-80" alt="">
+      <h3 class="text-xl font-semibold mb-3">Risk Scoring Modernisation</h3>
+      <p class="text-slate-600 dark:text-slate-400 mb-6 flex-1">
+        A financial services provider replaced opaque spreadsheets with SESL’s deterministic,
+        explainable scoring engine — improving governance and speed.
+      </p>
+      <a href="customer3-risk.html" class="mt-auto inline-block px-5 py-2 rounded-lg bg-brand-600 text-white hover:bg-brand-500 transition font-semibold">
+        Read story →
+      </a>
+    </div>
+
+  </div>
+</section>
 
 <!-- FOOTER -->
 <footer class="border-t border-slate-300 dark:border-slate-800 py-16 px-4">
@@ -206,7 +218,7 @@
   </div>
 </footer>
 
-<!-- THEME + MOBILE MENU SCRIPT -->
+<!-- SCRIPTS -->
 <script>
   const btn = document.getElementById("themeToggle");
 
@@ -215,21 +227,21 @@
   }
 
   btn.addEventListener("click", () => {
-    const isDark = document.documentElement.classList.toggle("dark");
-    localStorage.setItem("theme", isDark ? "dark" : "light");
+    const dark = document.documentElement.classList.toggle("dark");
+    localStorage.setItem("theme", dark ? "dark" : "light");
     updateThemeIcon();
   });
 
   updateThemeIcon();
-  document.getElementById("year").textContent = new Date().getFullYear();
 
-  // Mobile Menu
+  // Mobile menu toggle
   const mobileBtn = document.getElementById("mobileMenuBtn");
   const mobileMenu = document.getElementById("mobileMenu");
-
   mobileBtn.addEventListener("click", () => {
     mobileMenu.classList.toggle("hidden");
   });
+
+  document.getElementById("year").textContent = new Date().getFullYear();
 </script>
 
 </body>

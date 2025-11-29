@@ -48,6 +48,7 @@
       <a href="index.html">Home</a>
       <a href="product.html">Product</a>
       <a href="solutions.html">Solutions</a>
+      <a href="Customers.html">Customers</a>
       <a href="resources.html">Resources</a>
       <a href="pricing.html" class="text-brand-600 dark:text-brand-300 font-semibold">Pricing</a>
       <a href="about.html">About</a>
@@ -233,9 +234,174 @@
     <h2 class="text-3xl font-semibold mb-10">Frequently Asked Questions</h2>
 
     <div id="faqAccordion" class="space-y-4">
-      <!-- (Your accordion content remains exactly as you provided it) -->
-      <!-- I am leaving it untouched for clarity -->
+
+      <!-- FAQ 1 -->
+      <div class="border border-slate-300 dark:border-slate-700 rounded-xl">
+        <button data-accordion-trigger class="w-full flex justify-between items-center px-5 py-4 text-left">
+          <span class="font-medium">What is SESL?</span>
+          <span data-chevron class="transition-transform">⌄</span>
+        </button>
+        <div class="px-5 pb-4 hidden text-sm text-slate-600 dark:text-slate-400">
+          SESL (Simple Expert System Language) is a lightweight rule-engine designed for transparency, explainability, and compatibility with LLMs.
+        </div>
+      </div>
+
+      <!-- FAQ 2 -->
+      <div class="border border-slate-300 dark:border-slate-700 rounded-xl">
+        <button data-accordion-trigger class="w-full flex justify-between items-center px-5 py-4 text-left">
+          <span class="font-medium">Can I use SESL completely offline?</span>
+          <span data-chevron class="transition-transform">⌄</span>
+        </button>
+        <div class="px-5 pb-4 hidden text-sm text-slate-600 dark:text-slate-400">
+          Yes. The Local Licence provides a fully offline SESL engine with no external dependencies.
+        </div>
+      </div>
+
+      <!-- FAQ 3 -->
+      <div class="border border-slate-300 dark:border-slate-700 rounded-xl">
+        <button data-accordion-trigger class="w-full flex justify-between items-center px-5 py-4 text-left">
+          <span class="font-medium">How does the MCP Licence work?</span>
+          <span data-chevron class="transition-transform">⌄</span>
+        </button>
+        <div class="px-5 pb-4 hidden text-sm">
+          The MCP Licence lets you call SESL through ChatGPT or any MCP-compatible LLM. You pay per request with a £10 monthly minimum.
+        </div>
+      </div>
+
+      <!-- FAQ 4 -->
+      <div class="border border-slate-300 dark:border-slate-700 rounded-xl">
+        <button data-accordion-trigger class="w-full flex justify-between items-center px-5 py-4 text-left">
+          <span class="font-medium">Is there a free version of SESL?</span>
+          <span data-chevron class="transition-transform">⌄</span>
+        </button>
+        <div class="px-5 pb-4 hidden text-sm">
+          Yes. The Free plan includes up to 10 rules, 5 scenarios, basic explainability, and community support.
+        </div>
+      </div>
+
+      <!-- FAQ 5 -->
+      <div class="border border-slate-300 dark:border-slate-700 rounded-xl">
+        <button data-accordion-trigger class="w-full flex justify-between items-center px-5 py-4 text-left">
+          <span class="font-medium">What payment methods are supported?</span>
+          <span data-chevron class="transition-transform">⌄</span>
+        </button>
+        <div class="px-5 pb-4 hidden text-sm">
+          We accept major credit and debit cards for monthly plans. Enterprise customers can request invoicing.
+        </div>
+      </div>
+
+      <!-- FAQ 6 -->
+      <div class="border border-slate-300 dark:border-slate-700 rounded-xl">
+        <button data-accordion-trigger class="w-full flex justify-between items-center px-5 py-4 text-left">
+          <span class="font-medium">Do you offer a trial for the paid plans?</span>
+          <span data-chevron class="transition-transform">⌄</span>
+        </button>
+        <div class="px-5 pb-4 hidden text-sm">
+          MCP and API usage can be tested with the Free tier until you exceed its limitations. Local Licence does not include a trial.
+        </div>
+      </div>
+
+      <!-- FAQ 7 -->
+      <div class="border border-slate-300 dark:border-slate-700 rounded-xl">
+        <button data-accordion-trigger class="w-full flex justify-between items-center px-5 py-4 text-left">
+          <span class="font-medium">Are volume discounts available?</span>
+          <span data-chevron class="transition-transform">⌄</span>
+        </button>
+        <div class="px-5 pb-4 hidden text-sm">
+          Yes. API plans automatically apply volume-based pricing depending on monthly usage.
+        </div>
+      </div>
+
+      <!-- FAQ 8 -->
+      <div class="border border-slate-300 dark:border-slate-700 rounded-xl">
+        <button data-accordion-trigger class="w-full flex justify-between items-center px-5 py-4 text-left">
+          <span class="font-medium">Can I switch plans later?</span>
+          <span data-chevron class="transition-transform">⌄</span>
+        </button>
+        <div class="px-5 pb-4 hidden text-sm">
+          Yes. You can upgrade or downgrade at any time, except the Local Licence and Organisation Server which have contract terms.
+        </div>
+      </div>
+
+      <!-- FAQ 9 -->
+      <div class="border border-slate-300 dark:border-slate-700 rounded-xl">
+        <button data-accordion-trigger class="w-full flex justify-between items-center px-5 py-4 text-left">
+          <span class="font-medium">Does SESL store my rules?</span>
+          <span data-chevron class="transition-transform">⌄</span>
+        </button>
+        <div class="px-5 pb-4 hidden text-sm">
+          MCP and API plans include cloud storage for rulesets and scenarios. Local Edition stores everything on your machine.
+        </div>
+      </div>
+
+      <!-- FAQ 10 -->
+      <div class="border border-slate-300 dark:border-slate-700 rounded-xl">
+        <button data-accordion-trigger class="w-full flex justify-between items-center px-5 py-4 text-left">
+          <span class="font-medium">Is SESL GDPR compliant?</span>
+          <span data-chevron class="transition-transform">⌄</span>
+        </button>
+        <div class="px-5 pb-4 hidden text-sm">
+          Yes. We follow strict data-handling policies and offer EU region hosting for enterprise deployments.
+        </div>
+      </div>
+
+      <!-- FAQ 11 -->
+      <div class="border border-slate-300 dark:border-slate-700 rounded-xl">
+        <button data-accordion-trigger class="w-full flex justify-between items-center px-5 py-4 text-left">
+          <span class="font-medium">Can SESL integrate with my LLM backend?</span>
+          <span data-chevron class="transition-transform">⌄</span>
+        </button>
+        <div class="px-5 pb-4 hidden text-sm">
+          Yes. SESL works with any MCP-compatible LLM and provides a fully REST-based API for custom integrations.
+        </div>
+      </div>
+
+      <!-- FAQ 12 -->
+      <div class="border border-slate-300 dark:border-slate-700 rounded-xl">
+        <button data-accordion-trigger class="w-full flex justify-between items-center px-5 py-4 text-left">
+          <span class="font-medium">Do you support team accounts?</span>
+          <span data-chevron class="transition-transform">⌄</span>
+        </button>
+        <div class="px-5 pb-4 hidden text-sm">
+          Team management is available for MCP, API, and Organisation Server plans.
+        </div>
+      </div>
+
+      <!-- FAQ 13 -->
+      <div class="border border-slate-300 dark:border-slate-700 rounded-xl">
+        <button data-accordion-trigger class="w-full flex justify-between items-center px-5 py-4 text-left">
+          <span class="font-medium">What’s included in the Organisation Server?</span>
+          <span data-chevron class="transition-transform">⌄</span>
+        </button>
+        <div class="px-5 pb-4 hidden text-sm">
+          A fully dedicated SESL engine with private hosting, region selection, enterprise SLAs, and priority support.
+        </div>
+      </div>
+
+      <!-- FAQ 14 -->
+      <div class="border border-slate-300 dark:border-slate-700 rounded-xl">
+        <button data-accordion-trigger class="w-full flex justify-between items-center px-5 py-4 text-left">
+          <span class="font-medium">How does billing work?</span>
+          <span data-chevron class="transition-transform">⌄</span>
+        </button>
+        <div class="px-5 pb-4 hidden text-sm">
+          Billing occurs monthly. MCP/API usage is charged based on the number of SESL evaluation requests made.
+        </div>
+      </div>
+
+      <!-- FAQ 15 -->
+      <div class="border border-slate-300 dark:border-slate-700 rounded-xl">
+        <button data-accordion-trigger class="w-full flex justify-between items-center px-5 py-4 text-left">
+          <span class="font-medium">Where can I get support?</span>
+          <span data-chevron class="transition-transform">⌄</span>
+        </button>
+        <div class="px-5 pb-4 hidden text-sm">
+          Free users receive community support. Paid plans include priority support, and enterprise customers receive dedicated account assistance.
+        </div>
+      </div>
+
     </div>
+
   </div>
 </section>
 
