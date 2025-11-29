@@ -1,0 +1,652 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>SESL – Pricing</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="SESL pricing for Local Licence, MCP, API, and Enterprise deployments." />
+
+  <!-- Load dark mode before rendering -->
+  <script>
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme === "dark" || (!savedTheme && window.matchMedia("(prefers-color-scheme: dark)").matches)) {
+      document.documentElement.classList.add("dark");
+    }
+  </script>
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: "class",
+      theme: {
+        extend: {
+          colors: {
+            brand: { 300: "#a5b4fc", 500: "#6366f1", 600: "#4f46e5" }
+          },
+          fontFamily: { sans: ["Inter", "system-ui", "Arial"] }
+        }
+      }
+    };
+  </script>
+</head>
+
+<body class="bg-white text-slate-900 dark:bg-slate-950 dark:text-slate-100 antialiased">
+
+<!-- HEADER -->
+<header class="border-b border-slate-300 bg-white/80 backdrop-blur sticky top-0 z-40 dark:border-slate-800 dark:bg-slate-950/80">
+  <div class="max-w-7xl mx-auto px-4 h-16 flex items-center justify-between">
+
+    <!-- LOGO -->
+    <a href="index.html" class="flex items-center gap-3">
+      <img src="SESL Logo.png" class="h-10 block dark:hidden" />
+      <img src="SESL Logo Dark.png" class="h-10 hidden dark:block" />
+    </a>
+
+    <!-- NAV -->
+    <nav class="hidden md:flex gap-8 text-sm font-medium">
+      <a href="index.html">Home</a>
+      <a href="product.html">Product</a>
+      <a href="solutions.html">Solutions</a>
+      <a href="resources.html">Resources</a>
+      <a href="pricing.html" class="text-brand-600 dark:text-brand-300 font-semibold">Pricing</a>
+      <a href="about.html">About</a>
+    </nav>
+
+    <!-- RIGHT SIDE -->
+    <div class="flex items-center gap-4">
+      <a href="login.html"
+        class="px-4 py-2 rounded-lg border border-slate-300 text-slate-800 hover:bg-slate-200
+               dark:border-slate-700 dark:text-slate-200 dark:hover:bg-slate-800
+               text-sm font-medium transition-colors">
+        Login
+      </a>
+
+      <button id="themeToggle"
+        class="p-2 rounded-full border border-slate-300 text-slate-800 hover:bg-slate-200 
+               dark:border-slate-700 dark:text-slate-300 dark:hover:bg-slate-800 transition-colors">
+        🌙
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="pt-24 pb-12 px-4 text-center">
+  <div class="max-w-3xl mx-auto">
+    <h1 class="text-4xl sm:text-5xl font-semibold mb-6">Simple, transparent pricing.</h1>
+    <p class="text-lg text-slate-700 dark:text-slate-300">
+      Choose the SESL setup that works for you — locally, through MCP, via API, or with a dedicated enterprise server.
+    </p>
+  </div>
+</section>
+
+<!-- PRICING GRID -->
+<section class="py-16 px-4 border-t border-slate-200 dark:border-slate-800">
+  <div class="max-w-7xl mx-auto grid lg:grid-cols-5 md:grid-cols-3 sm:grid-cols-2 grid-cols-1 gap-8">
+
+    <!-- FREE -->
+    <div class="p-8 bg-slate-50 dark:bg-slate-900/40 rounded-2xl border border-slate-300 dark:border-slate-800 flex flex-col">
+      <h2 class="text-2xl font-semibold mb-2">Free</h2>
+      <p class="text-slate-600 dark:text-slate-400 text-sm mb-4">Ideal for learning SESL.</p>
+      <div class="text-4xl font-bold mb-4">£0 <span class="text-lg font-normal text-slate-500">forever</span></div>
+
+      <ul class="space-y-3 text-sm mb-6 flex-1">
+        <li>✔ Up to 10 rules</li>
+        <li>✔ Up to 5 scenarios</li>
+        <li>✔ Basic explainability</li>
+        <li>✔ Community support</li>
+        <li>✖ No MCP</li>
+        <li>✖ No API</li>
+      </ul>
+
+      <a href="#" class="mt-auto text-center block px-6 py-3 rounded-lg bg-slate-800 hover:bg-slate-700 text-white 
+      dark:bg-slate-700 dark:hover:bg-slate-600 transition font-semibold">Get Started</a>
+    </div>
+
+    <!-- LOCAL LICENCE -->
+    <div class="p-8 bg-slate-100 dark:bg-slate-900/40 rounded-2xl border border-slate-300 dark:border-slate-800 flex flex-col">
+      <h2 class="text-2xl font-semibold mb-2">Local Licence</h2>
+      <p class="text-slate-600 dark:text-slate-400 text-sm mb-4">Run SESL fully offline.</p>
+
+      <div class="text-4xl font-bold mb-4">£10 <span class="text-lg font-normal text-slate-500">monthly</span></div>
+
+      <ul class="space-y-3 text-sm mb-6 flex-1">
+        <li>✔ Unlimited rules</li>
+        <li>✔ Unlimited scenarios</li>
+        <li>✔ Full explainability</li>
+        <li>✔ Runs offline</li>
+        <li>✔ No external dependencies</li>
+      </ul>
+
+      <p class="text-xs text-slate-500 dark:text-slate-500 mb-4">
+        12-month minimum commitment, then 1-month rolling.
+      </p>
+
+      <a href="#" class="mt-auto text-center block px-6 py-3 rounded-lg bg-brand-600 hover:bg-brand-500 text-white transition font-semibold">
+        Buy Licence
+      </a>
+    </div>
+
+    <!-- MCP LICENCE -->
+    <div class="p-8 bg-white dark:bg-slate-900 rounded-2xl border border-slate-300 dark:border-slate-800 shadow-sm flex flex-col">
+      <h2 class="text-2xl font-semibold mb-2">MCP Licence</h2>
+      <p class="text-slate-600 dark:text-slate-400 text-sm mb-4">Use SESL with ChatGPT or any MCP-compatible LLM.</p>
+
+      <div class="text-4xl font-bold mb-4">£0.05 <span class="text-lg font-normal text-slate-500">per request</span></div>
+
+      <ul class="space-y-3 text-sm mb-6 flex-1">
+        <li>✔ Unlimited MCP queries</li>
+        <li>✔ LLM-assisted rule creation</li>
+        <li>✔ Explainability traces log</li>
+        <li>✔ Ruleset and Scenario storage</li>
+        <li>✔ Audit logs</li>
+        <li>✔ Priority feature access</li>
+      </ul>
+
+      <p class="text-xs text-slate-500 dark:text-slate-500 mb-4">
+        £10 minimum monthly spend. Credit card required.
+      </p>
+
+      <a href="#" class="mt-auto text-center block px-6 py-3 rounded-lg bg-brand-600 hover:bg-brand-500 text-white transition font-semibold">
+        Subscribe
+      </a>
+    </div>
+
+    <!-- API LICENCE -->
+    <div class="p-8 bg-slate-100 dark:bg-slate-900/40 rounded-2xl border border-slate-300 dark:border-slate-800 flex flex-col">
+      <h2 class="text-2xl font-semibold mb-2">API Licence</h2>
+      <p class="text-slate-600 dark:text-slate-400 text-sm mb-4">Integrate SESL into your apps at scale.</p>
+
+      <div class="text-4xl font-bold mb-4">£0.10 <span class="text-lg font-normal text-slate-500">per request</span></div>
+
+      <ul class="space-y-3 text-sm mb-6 flex-1">
+        <li>✔ Hosted engine</li>
+        <li>✔ Unlimited rule queries</li>
+        <li>✔ Explainability traces log</li>
+        <li>✔ Ruleset and Scenario storage</li>
+        <li>✔ High-performance evaluation</li>
+        <li>✔ Volume discounts</li>
+      </ul>
+
+      <p class="text-xs text-slate-500 dark:text-slate-500 mb-4">
+        £10 minimum monthly spend. Credit card required.
+      </p>
+
+      <a href="#" class="mt-auto text-center block px-6 py-3 rounded-lg bg-brand-600 hover:bg-brand-500 text-white font-semibold transition">
+        Get API Key
+      </a>
+    </div>
+
+    <!-- ORGANISATION SERVER -->
+    <div class="p-8 bg-slate-50 dark:bg-slate-900/40 rounded-2xl border border-slate-300 dark:border-slate-800 flex flex-col">
+      <h2 class="text-2xl font-semibold mb-2">Organisation Server</h2>
+      <p class="text-slate-600 dark:text-slate-400 text-sm mb-4">A fully dedicated MCP + API server.</p>
+
+      <div class="text-4xl font-bold mb-4">TBD<span class="text-lg font-normal text-slate-500"> / month</span></div>
+
+      <ul class="space-y-3 text-sm mb-6 flex-1">
+        <li>✔ Dedicated SESL engine</li>
+        <li>✔ Private hosting</li>
+        <li>✔ Custom SLAs</li>
+        <li>✔ Region selection</li>
+        <li>✔ Enhanced security</li>
+        <li>✔ Deployment assistance</li>
+      </ul>
+
+      <p class="text-xs text-slate-500 dark:text-slate-500 mb-4">
+        12-month minimum contract.
+      </p>
+
+      <a href="#" class="mt-auto text-center block px-6 py-3 rounded-lg bg-slate-800 hover:bg-slate-700 text-white 
+      dark:bg-slate-700 dark:hover:bg-slate-600 font-semibold transition">
+        Contact Sales
+      </a>
+    </div>
+
+  </div>
+</section>
+
+<!-- FULL 29-QUESTION ACCORDION FAQ -->
+<section class="py-20 px-4 border-t border-slate-200 dark:border-slate-800">
+  <div class="max-w-4xl mx-auto">
+    <h2 class="text-3xl font-semibold mb-10">Frequently Asked Questions</h2>
+
+    <div id="faqAccordion" class="space-y-4">
+      <!-- FAQ (Accordion Style with Icons + Policy References) -->
+    <div class="space-y-4" id="faqAccordion">
+
+      <!-- 1 — Minimum Licensing Commitments -->
+      <div class="border border-slate-300 dark:border-slate-700 rounded-xl">
+        <button data-accordion-trigger class="w-full flex justify-between items-center px-4 py-4 text-left hover:bg-slate-100 dark:hover:bg-slate-900 transition">
+          <span class="flex items-center gap-2 font-semibold">
+            <svg class="w-5 h-5 text-brand-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 5v14m7-7H5"/></svg>
+            What are the minimum licensing commitments?
+          </span>
+          <svg data-chevron class="w-5 h-5 transition-transform" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div data-accordion-panel class="hidden px-4 pb-4">
+          <p class="text-slate-600 dark:text-slate-400">
+            • <strong>Local Licence:</strong> 12-month minimum, then monthly rolling.<br>
+            • <strong>MCP Licence:</strong> £10 minimum monthly spend; card required; Local Licence needed for each user.<br>
+            • <strong>API Licence:</strong> £10 minimum monthly spend; card required; Local Licence needed.<br>
+            • <strong>Organisation Server:</strong> 12-month minimum term.<br><br>
+            For more information, see the <a href="mcp-api-policy.html" class="text-brand-600">MCP & API Policy</a>.
+          </p>
+        </div>
+      </div>
+
+      <!-- 2 — Switching Plans -->
+      <div class="border border-slate-300 dark:border-slate-700 rounded-xl">
+        <button data-accordion-trigger class="w-full flex justify-between items-center px-4 py-4 hover:bg-slate-100 dark:hover:bg-slate-900 transition">
+          <span class="flex items-center gap-2 font-semibold">
+            <svg class="w-5 h-5 text-brand-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4v6h6M20 20v-6h-6"/><path d="M4 10a8 8 0 0116 0M20 14a8 8 0 01-16 0"/></svg>
+            Can I switch plans at any time?
+          </span>
+          <svg data-chevron class="w-5 h-5 transition-transform" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div data-accordion-panel class="hidden px-4 pb-4">
+          <p class="text-slate-600 dark:text-slate-400">Yes — changes take effect at the start of your next billing cycle.</p>
+        </div>
+      </div>
+
+      <!-- 3 — Local Licence Auto-Renewal -->
+      <div class="border border-slate-300 dark:border-slate-700 rounded-xl">
+        <button data-accordion-trigger class="w-full flex justify-between items-center px-4 py-4 hover:bg-slate-100 dark:hover:bg-slate-900">
+          <span class="flex items-center gap-2 font-semibold">
+            <svg class="w-5 h-5 text-brand-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/></svg>
+            Does the Local Licence renew automatically?
+          </span>
+          <svg data-chevron class="w-5 h-5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div data-accordion-panel class="hidden px-4 pb-4">
+          <p class="text-slate-600 dark:text-slate-400">
+            Yes — after the initial 12-month period, it becomes a monthly rolling licence.
+          </p>
+        </div>
+      </div>
+
+      <!-- 4 — MCP Billing -->
+      <div class="border border-slate-300 dark:border-slate-700 rounded-xl">
+        <button data-accordion-trigger class="w-full flex justify-between items-center px-4 py-4 hover:bg-slate-100 dark:hover:bg-slate-900">
+          <span class="flex items-center gap-2 font-semibold">
+            <svg class="w-5 h-5 text-brand-600" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path d="M8 14l4-4 4 4m-4-4v12"/></svg>
+            How is MCP usage billed?
+          </span>
+          <svg data-chevron class="w-5 h-5 transition-transform" fill="none" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+
+        <div data-accordion-panel class="hidden px-4 pb-4">
+          <p class="text-slate-600 dark:text-slate-400">
+            Billed per request, with a £10 monthly minimum.  
+            For details, see the <a class="text-brand-600" href="mcp-api-policy.html">MCP & API Policy</a>.
+          </p>
+        </div>
+      </div>
+
+      <!-- 5 — Credit Card Requirement -->
+      <div class="border border-slate-300 dark:border-slate-700 rounded-xl">
+        <button data-accordion-trigger class="w-full flex justify-between items-center px-4 py-4 hover:bg-slate-100 dark:hover:bg-slate-900">
+          <span class="flex items-center gap-2 font-semibold">
+            <svg class="w-5 h-5 text-brand-600" fill="none" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24"><path d="M2 7h20M2 11h20M2 17h20"/></svg>
+            Do I need a credit card?
+          </span>
+          <svg data-chevron class="w-5 h-5 transition-transform" stroke="currentColor" stroke-width="2" fill="none" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div data-accordion-panel class="hidden px-4 pb-4">
+          <p class="text-slate-600 dark:text-slate-400">MCP and API plans require a saved card; enterprise customers may use invoices.</p>
+        </div>
+      </div>
+
+      <!-- 6 — API Billing -->
+      <div class="border border-slate-300 dark:border-slate-700 rounded-xl">
+        <button data-accordion-trigger class="w-full flex justify-between items-center px-4 py-4 hover:bg-slate-100 dark:hover:bg-slate-900">
+          <span class="flex items-center gap-2 font-semibold">
+            <svg class="w-5 h-5 text-brand-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg>
+            How are API requests billed?
+          </span>
+          <svg data-chevron class="w-5 h-5 transition-transform" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2" fill="none"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+
+        <div data-accordion-panel class="hidden px-4 pb-4">
+          <p class="text-slate-600 dark:text-slate-400">
+            Per request, minimum £10/month, automatic tiered discounts.  
+            See <a class="text-brand-600" href="mcp-api-policy.html">MCP & API Policy</a>.
+          </p>
+        </div>
+      </div>
+
+      <!-- 7 — High Volume Workloads -->
+      <div class="border border-slate-300 dark:border-slate-700 rounded-xl">
+        <button data-accordion-trigger class="w-full flex justify-between px-4 py-4 hover:bg-slate-100 dark:hover:bg-slate-900">
+          <span class="flex items-center gap-2 font-semibold">
+            <svg class="w-5 h-5 text-brand-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/></svg>
+            Can SESL handle high-volume workloads?
+          </span>
+          <svg data-chevron class="w-5 h-5 transition-transform" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div data-accordion-panel class="hidden px-4 pb-4">
+          <p class="text-slate-600 dark:text-slate-400">Yes — SESL scales horizontally to millions of requests/day.</p>
+        </div>
+      </div>
+
+      <!-- 8 — Storage of Rule Files -->
+      <div class="border border-slate-300 dark:border-slate-700 rounded-xl">
+        <button data-accordion-trigger class="w-full flex justify-between px-4 py-4 hover:bg-slate-100 dark:hover:bg-slate-900">
+          <span class="flex items-center gap-2 font-semibold">
+            <svg class="w-5 h-5 text-brand-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 4h16v16H4z"/></svg>
+            Do you store rule files or scenarios?
+          </span>
+          <svg data-chevron class="w-5 h-5 transition-transform" fill="none" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+
+        <div data-accordion-panel class="hidden px-4 pb-4">
+          <p class="text-slate-600 dark:text-slate-400">
+            No — not unless you explicitly enable logging.  
+            Refer to the <a class="text-brand-600" href="mcp-api-policy.html">MCP & API Policy</a>.
+          </p>
+        </div>
+      </div>
+
+      <!-- 9 — Model Training -->
+      <div class="border border-slate-300 dark:border-slate-700 rounded-xl">
+        <button data-accordion-trigger class="w-full flex justify-between px-4 py-4 hover:bg-slate-100 dark:hover:bg-slate-900">
+          <span class="flex items-center gap-2 font-semibold">
+            <svg class="w-5 h-5 text-brand-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M12 2v20"/></svg>
+            Is customer data used for model training?
+          </span>
+          <svg data-chevron class="w-5 h-5 transition-transform" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+
+        <div data-accordion-panel class="hidden px-4 pb-4">
+          <p class="text-slate-600 dark:text-slate-400">Never. SESL does not use customer submitted data for any model building purposes. All customer data is only accessable to that customer.</p>
+        </div>
+      </div>
+
+      <!-- 10 — Hosting Regions -->
+      <div class="border border-slate-300 dark:border-slate-700 rounded-xl">
+        <button data-accordion-trigger class="w-full flex justify-between px-4 py-4 hover:bg-slate-100 dark:hover:bg-slate-900">
+          <span class="flex items-center gap-2 font-semibold">
+            <svg class="w-5 h-5 text-brand-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/></svg>
+            Which regions do you host in?
+          </span>
+          <svg data-chevron class="w-5 h-5 transition-transform" fill="none" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div data-accordion-panel class="hidden px-4 pb-4">
+          <p class="text-slate-600 dark:text-slate-400">US, EU, and UK. Enterprise customers may choose dedicated regions.</p>
+        </div>
+      </div>
+
+      <!-- 12 — Security -->
+      <div class="border border-slate-300 dark:border-slate-700 rounded-xl">
+        <button data-accordion-trigger class="w-full flex justify-between px-4 py-4 hover:bg-slate-100 dark:hover:bg-slate-900">
+          <span class="flex items-center gap-2 font-semibold">
+            <svg class="w-5 h-5 text-brand-600" fill="none" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24"><path d="M12 12l8-4-8-4-8 4 8 4zm0 0v8"/></svg>
+            What security measures are in place?
+          </span>
+          <svg data-chevron class="w-5 h-5 transition-transform" fill="none" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div data-accordion-panel class="hidden px-4 pb-4">
+          <p class="text-slate-600 dark:text-slate-400">
+            For the dedicated organisation server we use encryption at rest & transit, isolated compute, private networking, zero-log mode, IP restrictions, and tenant separation.
+          </p>
+        </div>
+      </div>
+
+      <!-- 13 — Support Levels -->
+      <div class="border border-slate-300 dark:border-slate-700 rounded-xl">
+        <button data-accordion-trigger class="w-full flex justify-between px-4 py-4 hover:bg-slate-100 dark:hover:bg-slate-900">
+          <span class="flex items-center gap-2 font-semibold">
+            <svg class="w-5 h-5 text-brand-600" fill="none" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24"><path d="M18 8a6 6 0 10-12 0"/></svg>
+            What support levels are available?
+          </span>
+          <svg data-chevron class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+
+        <div data-accordion-panel class="px-4 pb-4 hidden">
+          <p class="text-slate-600 dark:text-slate-400">
+            All paid plans include priority support. Enterprise includes 24/7 coverage and dedicated channels.
+          </p>
+        </div>
+      </div>
+
+      <!-- 14 — Cancellation -->
+      <div class="border border-slate-300 dark:border-slate-700 rounded-xl">
+        <button data-accordion-trigger class="w-full flex justify-between px-4 py-4 hover:bg-slate-100 dark:hover:bg-slate-900">
+          <span class="flex items-center gap-2 font-semibold">
+            <svg class="w-5 h-5 text-brand-600" fill="none" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24"><path d="M6 18L18 6M6 6l12 12"/></svg>
+            Can I cancel at any time?
+          </span>
+          <svg data-chevron class="w-5 h-5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div data-accordion-panel class="hidden px-4 pb-4">
+          <p class="text-slate-600 dark:text-slate-400">
+            Yes — after meeting the minimum term (Local: 12 months, MCP/API: one billing month).
+          </p>
+        </div>
+      </div>
+
+      <!-- 15 — Refunds -->
+      <div class="border border-slate-300 dark:border-slate-700 rounded-xl">
+        <button data-accordion-trigger class="w-full flex justify-between px-4 py-4 hover:bg-slate-100 dark:hover:bg-slate-900">
+          <span class="flex items-center gap-2 font-semibold">
+            <svg class="w-5 h-5 text-brand-600" fill="none" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/></svg>
+            Do you offer refunds?
+          </span>
+          <svg data-chevron class="w-5 h-5 transition-transform" fill="none" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div data-accordion-panel class="hidden px-4 pb-4">
+          <p class="text-slate-600 dark:text-slate-400">No refunds for unused credits; Enterprise refunds follow contract terms.</p>
+        </div>
+      </div>
+
+      <!-- 17 — Logging -->
+      <div class="border border-slate-300 dark:border-slate-700 rounded-xl">
+        <button data-accordion-trigger class="w-full flex justify-between px-4 py-4 hover:bg-slate-100 dark:hover:bg-slate-900">
+          <span class="flex items-center gap-2 font-semibold">
+            <svg class="w-5 h-5 text-brand-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M4 6h16M4 10h16M4 14h16"/></svg>
+            Do you store logs of requests?
+          </span>
+          <svg data-chevron class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div data-accordion-panel class="hidden px-4 pb-4">
+          <p class="text-slate-600 dark:text-slate-400">
+            Minimal metadata only; request content is not stored unless perminant logging is enabled.
+            More detail in the <a class="text-brand-600" href="mcp-api-policy.html">MCP & API Policy</a>.
+          </p>
+        </div>
+      </div>
+
+      <!-- 18 — Invoices -->
+      <div class="border border-slate-300 dark:border-slate-700 rounded-xl">
+        <button data-accordion-trigger class="w-full flex justify-between px-4 py-4 hover:bg-slate-100 dark:hover:bg-slate-900">
+          <span class="flex items-center gap-2 font-semibold">
+            <svg class="w-5 h-5 text-brand-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18"/></svg>
+            Do you provide invoices?
+          </span>
+          <svg data-chevron class="w-5 h-5 transition-transform" stroke="currentColor" stroke-width="2" fill="none" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div data-accordion-panel class="hidden px-4 pb-4">
+          <p class="text-slate-600 dark:text-slate-400">Yes — for all paid tiers; Enterprise supports PO-based billing.</p>
+        </div>
+      </div>
+
+      <!-- 19 — Annual Prepay -->
+      <div class="border border-slate-300 dark:border-slate-700 rounded-xl">
+        <button data-accordion-trigger class="w-full flex justify-between px-4 py-4 hover:bg-slate-100 dark:hover:bg-slate-900">
+          <span class="flex items-center gap-2 font-semibold">
+            <svg class="w-5 h-5 text-brand-600" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path d="M12 5v14m7-7H5"/></svg>
+            Can I prepay annually?
+          </span>
+          <svg data-chevron class="w-5 h-5 transition-transform" fill="none" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div data-accordion-panel class="hidden px-4 pb-4"><p class="text-slate-600 dark:text-slate-400">Yes — available for MCP, API, and Enterprise plans.</p></div>
+      </div>
+
+      <!-- 20 — Free Trial -->
+      <div class="border border-slate-300 dark:border-slate-700 rounded-xl">
+        <button data-accordion-trigger class="w-full flex justify-between px-4 py-4 hover:bg-slate-100 dark:hover:bg-slate-900">
+          <span class="flex items-center gap-2 font-semibold">
+            <svg class="w-5 h-5 text-brand-600" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path d="M12 2v20"/></svg>
+            Do you offer a free trial?
+          </span>
+          <svg data-chevron class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div data-accordion-panel class="hidden px-4 pb-4"><p class="text-slate-600 dark:text-slate-400">Yes — the Free tier provides limited usage for evaluation.</p></div>
+      </div>
+
+      <!-- 21 — Cross-region API Keys -->
+      <div class="border border-slate-300 dark:border-slate-700 rounded-xl">
+        <button data-accordion-trigger class="w-full flex justify-between px-4 py-4 hover:bg-slate-100 dark:hover:bg-slate-900">
+          <span class="flex items-center gap-2 font-semibold">
+            <svg class="w-5 h-5 text-brand-600" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path d="M12 2v20"/></svg>
+            Can I use the same API key across regions?
+          </span>
+          <svg data-chevron class="w-5 h-5 transition-transform" fill="none" stroke-width="2" stroke="currentColor" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div data-accordion-panel class="hidden px-4 pb-4"><p class="text-slate-600 dark:text-slate-400">No — keys are region-specific for security & compliance.</p></div>
+      </div>
+
+      <!-- 22 — File Size Limits -->
+      <div class="border border-slate-300 dark:border-slate-700 rounded-xl">
+        <button data-accordion-trigger class="w-full flex justify-between px-4 py-4 hover:bg-slate-100 dark:hover:bg-slate-900">
+          <span class="flex items-center gap-2 font-semibold">
+            <svg class="w-5 h-5 text-brand-600" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><rect x="4" y="4" width="16" height="16"/></svg>
+            Is there a maximum rule file size?
+          </span>
+          <svg data-chevron class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div data-accordion-panel class="hidden px-4 pb-4"><p class="text-slate-600 dark:text-slate-400">Default limit is 1 MB. Enterprise limits may be increased.</p></div>
+      </div>
+
+      <!-- 23 — Failed Requests -->
+      <div class="border border-slate-300 dark:border-slate-700 rounded-xl">
+        <button data-accordion-trigger class="w-full flex justify-between px-4 py-4 hover:bg-slate-100 dark:hover:bg-slate-900">
+          <span class="flex items-center gap-2 font-semibold">
+            <svg class="w-5 h-5 text-brand-600" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path d="M6 18L18 6M6 6l12 12"/></svg>
+            Do failed requests count toward usage?
+          </span>
+          <svg data-chevron class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div data-accordion-panel class="hidden px-4 pb-4"><p class="text-slate-600 dark:text-slate-400">Yes — failed executions still consume compute resources.</p></div>
+      </div>
+
+      <!-- 24 — Scenario Counting -->
+      <div class="border border-slate-300 dark:border-slate-700 rounded-xl">
+        <button data-accordion-trigger class="w-full flex justify-between px-4 py-4 hover:bg-slate-100 dark:hover:bg-slate-900">
+          <span class="flex items-center gap-2 font-semibold">
+            <svg class="w-5 h-5 text-brand-600" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><rect x="4" y="4" width="16" height="16"/></svg>
+            How is a scenario execution counted?
+          </span>
+          <svg data-chevron class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div data-accordion-panel class="hidden px-4 pb-4"><p class="text-slate-600 dark:text-slate-400">One scenario = one request, regardless of complexity. Maximum number of iterations of a ruleset on one scenario is 50.</p></div>
+      </div>
+
+      <!-- 25 — Versioning -->
+      <div class="border border-slate-300 dark:border-slate-700 rounded-xl">
+        <button data-accordion-trigger class="w-full flex justify-between px-4 py-4 hover:bg-slate-100 dark:hover:bg-slate-900">
+          <span class="flex items-center gap-2 font-semibold">
+            <svg class="w-5 h-5 text-brand-600" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path d="M4 4v16M20 4v16"/></svg>
+            Does SESL support versioning?
+          </span>
+          <svg data-chevron class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div data-accordion-panel class="hidden px-4 pb-4"><p class="text-slate-600 dark:text-slate-400">Yes — version tags are supported for rule sets and scenarios.</p></div>
+      </div>
+
+      <!-- 26 — Concurrency Limits -->
+      <div class="border border-slate-300 dark:border-slate-700 rounded-xl">
+        <button data-accordion-trigger class="w-full flex justify-between px-4 py-4 hover:bg-slate-100 dark:hover:bg-slate-900">
+          <span class="flex items-center gap-2 font-semibold">
+            <svg class="w-5 h-5 text-brand-600" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path d="M4 4h16"/></svg>
+            Are there concurrency limits?
+          </span>
+          <svg data-chevron class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+
+        </button>
+        <div data-accordion-panel class="hidden px-4 pb-4"><p class="text-slate-600 dark:text-slate-400">Yes — soft limits apply; Enterprise gets dedicated pools.</p></div>
+      </div>
+
+      <!-- 27 — Usage Alerts -->
+      <div class="border border-slate-300 dark:border-slate-700 rounded-xl">
+        <button data-accordion-trigger class="w-full flex justify-between px-4 py-4 hover:bg-slate-100 dark:hover:bg-slate-900">
+          <span class="flex items-center gap-2 font-semibold">
+            <svg class="w-5 h-5 text-brand-600" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><circle cx="12" cy="12" r="10"/></svg>
+            Can I set usage alerts?
+          </span>
+          <svg data-chevron class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+
+        </button>
+        <div data-accordion-panel class="hidden px-4 pb-4"><p class="text-slate-600 dark:text-slate-400">Yes — dashboard and email alerts can be enabled.</p></div>
+      </div>
+
+      <!-- 28 — Exceeding Usage -->
+      <div class="border border-slate-300 dark:border-slate-700 rounded-xl">
+        <button data-accordion-trigger class="w-full flex justify-between px-4 py-4 hover:bg-slate-100 dark:hover:bg-slate-900">
+          <span class="flex items-center gap-2 font-semibold">
+            <svg class="w-5 h-5 text-brand-600" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor"><path d="M12 2v20"/></svg>
+            What happens if I exceed my monthly usage?
+          </span>
+          <svg data-chevron class="w-5 h-5 transition-transform" fill="none" stroke="currentColor" stroke-width="2" 
+            viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+
+        </button>
+        <div data-accordion-panel class="hidden px-4 pb-4"><p class="text-slate-600 dark:text-slate-400">Overage pricing applies automatically.</p></div>
+      </div>
+
+      <!-- 29 — Compliance Documentation -->
+      <div class="border border-slate-300 dark:border-slate-700 rounded-xl">
+        <button data-accordion-trigger class="w-full flex justify-between px-4 py-4 hover:bg-slate-100 dark:hover:bg-slate-900">
+          <span class="flex items-center gap-2 font-semibold">
+            <svg class="w-5 h-5 text-brand-600" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16"/></svg>
+            Do you offer compliance documentation?
+          </span>
+          <svg data-chevron class="w-5 h-5 transition-transform" fill="none" stroke-width="2" stroke="currentColor"
+            viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+        </button>
+        <div data-accordion-panel class="px-4 pb-4 hidden">
+          <p class="text-slate-600 dark:text-slate-400">
+            Yes — full documentation for audits, data flows, region policies, and security is available.
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Accordion JS -->
+<script>
+  document.querySelectorAll('[data-accordion-trigger]').forEach(btn => {
+    btn.addEventListener('click', () => {
+      const panel = btn.nextElementSibling;
+      const chev = btn.querySelector('[data-chevron]');
+      panel.classList.toggle('hidden');
+      chev.classList.toggle('rotate-180');
+    });
+  });
+</script>
+
+
+
+<!-- FOOTER -->
+<footer class="border-t border-slate-300 dark:border-slate-800 py-16 px-4">
+  <div class="text-center text-sm text-slate-600 dark:text-slate-400">
+    © <span id="year"></span> Oblongix. All rights reserved.
+  </div>
+</footer>
+
+<script>
+  const btn = document.getElementById("themeToggle");
+  btn.addEventListener("click", () => {
+    const d = document.documentElement.classList.toggle("dark");
+    localStorage.setItem("theme", d ? "dark" : "light");
+    btn.textContent = d ? "☀️" : "🌙";
+  });
+  btn.textContent = document.documentElement.classList.contains("dark") ? "☀️" : "🌙";
+  document.getElementById("year").textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>

@@ -60,6 +60,7 @@
       <a href="product.html">Product</a>
       <a href="solutions.html">Solutions</a>
       <a href="resources.html">Resources</a>
+      <a href="pricing.html">Pricing</a>
       <a href="about.html">About</a>
     </nav>
 
@@ -108,14 +109,21 @@
       </p>
 
       <div class="flex flex-wrap justify-center gap-4">
-        <a href="#how" class="px-6 py-3 rounded-full bg-brand-500 hover:bg-brand-300 text-white font-semibold">
+
+        <!-- HOW SESL WORKS -->
+        <a href="#how"
+          class="px-6 py-3 rounded-full bg-brand-500 hover:bg-brand-300 text-white font-semibold transition-colors">
           How SESL Works
         </a>
-        <a href="#cli"
-          class="px-6 py-3 rounded-full border border-slate-300 dark:border-slate-700 text-slate-700 dark:text-slate-300 hover:bg-slate-100 dark:hover:bg-slate-800">
-          Explore the CLI
+
+        <!-- DOWNLOAD SESL -->
+        <a href="https://github.com/YOUR_REPO/releases"
+          class="px-6 py-3 rounded-full bg-green-600 hover:bg-green-500 text-white font-semibold transition-colors">
+          Download SESL
         </a>
+
       </div>
+
 
     </div>
   </section>
@@ -129,30 +137,28 @@
       <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
 
         <div class="p-6 rounded-2xl bg-slate-100 border border-slate-300 dark:bg-slate-900/40 dark:border-slate-800">
-          <h3 class="font-semibold mb-2">1. Write Rules</h3>
-          <p class="text-slate-700 dark:text-slate-300 text-sm">Or convert an existing document.</p>
+          <h3 class="font-semibold mb-2">1. Generate  Rules</h3>
+          <p class="text-slate-700 dark:text-slate-300 text-sm">Convert an existing document or just write the rules.</p>
         </div>
 
         <div class="p-6 rounded-2xl bg-slate-100 border border-slate-300 dark:bg-slate-900/40 dark:border-slate-800">
-          <h3 class="font-semibold mb-2">2. Run SESL</h3>
-          <p class="text-slate-700 dark:text-slate-300 text-sm">The engine evaluates all facts and tests.</p>
+          <h3 class="font-semibold mb-2">2. Run Scenarios</h3>
+          <p class="text-slate-700 dark:text-slate-300 text-sm">Provide the facts of a sceanrio and run SESL.</p>
         </div>
 
         <div class="p-6 rounded-2xl bg-slate-100 border border-slate-300 dark:bg-slate-900/40 dark:border-slate-800">
           <h3 class="font-semibold mb-2">3. Produce Result</h3>
-          <p class="text-slate-700 dark:text-slate-300 text-sm">Always deterministic, never random.</p>
+          <p class="text-slate-700 dark:text-slate-300 text-sm"> SESL evaluates all facts and tests. Always deterministic, never random.</p>
         </div>
 
         <div class="p-6 rounded-2xl bg-slate-100 border border-slate-300 dark:bg-slate-900/40 dark:border-slate-800">
           <h3 class="font-semibold mb-2">4. Explain Everything</h3>
-          <p class="text-slate-700 dark:text-slate-300 text-sm">SESL generates a full rule trace.</p>
+          <p class="text-slate-700 dark:text-slate-300 text-sm">SESL generates a full rule trace of which rules apply to the sceanrio.</p>
         </div>
 
       </div>
     </div>
   </section>
-
-
 
   <!-- FEATURES -->
   <section id="features" class="py-20 border-t border-slate-300 dark:border-slate-800 px-4">
@@ -196,76 +202,103 @@
     </div>
   </section>
 
+  <!-- VIDEO DEMO -->
+<section id="demo" class="py-20 border-t border-slate-300 dark:border-slate-800 px-4">
+  <div class="max-w-5xl mx-auto text-center">
 
+    <h2 class="text-3xl font-semibold mb-6">Watch SESL in Action</h2>
 
-  <!-- EXAMPLES -->
-  <section id="examples" class="py-20 border-t border-slate-300 dark:border-slate-800 px-4">
-    <div class="max-w-5xl mx-auto">
+    <p class="text-lg text-slate-700 dark:text-slate-300 max-w-2xl mx-auto mb-10">
+      See how SESL turns rules and facts into deterministic, explainable outcomes. 
+      This short demo walks through generating rules, running scenarios, and viewing full explanations.
+    </p>
 
-      <h2 class="text-3xl font-semibold mb-6">Example Use Cases</h2>
-
-      <div class="space-y-4 text-sm text-slate-700 dark:text-slate-300">
-
-        <div class="p-5 rounded-xl bg-slate-100 border border-slate-300 dark:bg-slate-900/40 dark:border-slate-800">
-          <strong>Eligibility:</strong> passports, benefits, renewals.
-        </div>
-
-        <div class="p-5 rounded-xl bg-slate-100 border border-slate-300 dark:bg-slate-900/40 dark:border-slate-800">
-          <strong>Compliance:</strong> rules, constraints, audits.
-        </div>
-
-        <div class="p-5 rounded-xl bg-slate-100 border border-slate-300 dark:bg-slate-900/40 dark:border-slate-800">
-          <strong>Risk Scoring:</strong> weighted scoring, thresholds.
-        </div>
-
-        <div class="p-5 rounded-xl bg-slate-100 border border-slate-300 dark:bg-slate-900/40 dark:border-slate-800">
-          <strong>Pricing:</strong> deterministic pricing engines.
-        </div>
-
-      </div>
-
+    <div class="relative pb-[56.25%] h-0 overflow-hidden rounded-2xl shadow-lg border border-slate-300 dark:border-slate-800">
+      <!-- Replace the YouTube link below with your real video -->
+      <iframe 
+        class="absolute top-0 left-0 w-full h-full"
+        src="https://www.youtube.com/embed/VIDEO_ID_HERE"
+        title="SESL Demo Video"
+        frameborder="0"
+        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+        allowfullscreen>
+      </iframe>
     </div>
-  </section>
 
-
-
-  <!-- CLI -->
-  <section id="cli" class="py-20 border-t border-slate-300 dark:border-slate-800 px-4">
-    <div class="max-w-5xl mx-auto">
-
-      <h2 class="text-3xl font-semibold mb-6">SESL CLI</h2>
-
-      <p class="text-slate-700 dark:text-slate-300 mb-6">
-        The SESL CLI lets you create, lint, explain, and run rule files locally.
-      </p>
-
-      <div class="rounded-xl bg-slate-100 border border-slate-300 p-4 dark:bg-slate-900/40 dark:border-slate-800">
-        <pre class="text-xs text-slate-800 dark:text-slate-200 overflow-x-auto">
-# Run a SESL file
-sesl rules.sesl
-
-# Run with explanation
-sesl describe rules.sesl
-
-# Lint your rules
-sesl lint rules.sesl
-
-# Run a scenario
-sesl run rules.sesl --scenario Example
-        </pre>
-      </div>
-
-    </div>
-  </section>
-
-
+  </div>
+</section>
 
   <!-- FOOTER -->
-  <footer class="py-10 text-center border-t border-slate-300 dark:border-slate-800">
-    <p class="text-sm text-slate-600 dark:text-slate-400">
-      © <span id="year"></span> SESL. All rights reserved.
-    </p>
-  </footer>
+<footer class="border-t border-slate-300 dark:border-slate-800 py-16 px-4">
+  <div class="max-w-7xl mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-10">
+
+    <!-- Column 1 -->
+    <div>
+      <h4 class="font-semibold mb-3 text-slate-900 dark:text-slate-100">Product</h4>
+      <ul class="space-y-2 text-slate-600 dark:text-slate-400 text-sm">
+        <li><a href="product.html" class="hover:text-brand-600">Overview</a></li>
+        <li><a href="product.html#features" class="hover:text-brand-600">Features</a></li>
+        <li><a href="#demo" class="hover:text-brand-600">Demo</a></li>
+      </ul>
+    </div>
+
+    <!-- Column 2 -->
+    <div>
+      <h4 class="font-semibold mb-3 text-slate-900 dark:text-slate-100">Solutions</h4>
+      <ul class="space-y-2 text-slate-600 dark:text-slate-400 text-sm">
+        <li><a href="solutions.html" class="hover:text-brand-600">Use Cases</a></li>
+        <li><a href="solutions.html#compliance" class="hover:text-brand-600">Compliance</a></li>
+        <li><a href="solutions.html#enterprise" class="hover:text-brand-600">Enterprise</a></li>
+        <li><a href="solutions.html#automation" class="hover:text-brand-600">Process Automation</a></li>
+      </ul>
+    </div>
+
+    <!-- Column 3 -->
+    <div>
+      <h4 class="font-semibold mb-3 text-slate-900 dark:text-slate-100">Resources</h4>
+      <ul class="space-y-2 text-slate-600 dark:text-slate-400 text-sm">
+        <li><a href="resources.html" class="hover:text-brand-600">Documentation</a></li>
+        <li><a href="https://github.com/YOUR_REPO/releases" class="hover:text-brand-600">Download</a></li>
+        <li><a href="resources.html#connect" class="hover:text-brand-600">LLM Server</a></li>
+        <li><a href="resources.html#examples" class="hover:text-brand-600">Examples</a></li>
+      </ul>
+    </div>
+
+    <!-- Column 4 -->
+    <div>
+      <h4 class="font-semibold mb-3 text-slate-900 dark:text-slate-100">Company</h4>
+      <ul class="space-y-2 text-slate-600 dark:text-slate-400 text-sm">
+        <li><a href="about.html" class="hover:text-brand-600">About SESL</a></li>
+        <li><a href="about.html#mission" class="hover:text-brand-600">Mission</a></li>
+        <li><a href="about.html#contact" class="hover:text-brand-600">Contact</a></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- Divider -->
+  <div class="max-w-7xl mx-auto mt-12 pt-8 border-t border-slate-300 dark:border-slate-800 flex flex-col sm:flex-row justify-between items-center gap-4">
+
+    <!-- Logo -->
+    <div class="flex items-center gap-3">
+      <img src="SESL Logo.png" class="h-7 block dark:hidden" />
+      <img src="SESL Logo Dark.png" class="h-7 hidden dark:block" />
+      <span class="text-sm text-slate-600 dark:text-slate-400">Simple Expert System Language</span>
+    </div>
+
+    <!-- Social Icons -->
+    <div class="flex gap-4">
+      <a href="#" class="text-slate-600 hover:text-brand-600 dark:text-slate-400">Twitter</a>
+      <a href="#" class="text-slate-600 hover:text-brand-600 dark:text-slate-400">LinkedIn</a>
+    </div>
+
+  </div>
+
+  <!-- Bottom legal line -->
+  <div class="text-center mt-6 text-sm text-slate-500 dark:text-slate-500">
+    © <span id="year"></span> Oblongix. All rights reserved.
+  </div>
+</footer>
 
 
   <!-- THEME SCRIPT -->
